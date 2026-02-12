@@ -37,7 +37,7 @@ class _HomeState extends State<Home> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search, size: 45, color: Colors.white),
+            icon: Icon(Icons.search, size: 45, color: Colors.grey),
           ),
         ],
       ),
@@ -56,7 +56,7 @@ class _HomeState extends State<Home> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 10),
+                SizedBox(height: 16),
                 SizedBox(
                   height: width * 0.25,
                   child: ListView.builder(
@@ -81,7 +81,9 @@ class _HomeState extends State<Home> {
                                     shape: BoxShape.circle,
                                   ),
                                   child: IconButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      print("maha");
+                                    },
                                     icon: Icon(Icons.add, color: Colors.white),
                                   ),
                                 ),
@@ -101,8 +103,8 @@ class _HomeState extends State<Home> {
                     },
                   ),
                 ),
-                const SizedBox(height: 10),
-                buildPostCard(context),
+                SizedBox(height: 10),
+               buildPostCard(context),
                 buildPostCard(context),
               ],
             ),
@@ -115,7 +117,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.transparent,
         color: Colors.brown.shade800,
         buttonBackgroundColor: Colors.amber,
-        height: 60,
+        //height: 60,
         animationDuration: const Duration(milliseconds: 300),
         items: const <Widget>[
           Icon(Icons.home, size: 30, color: Colors.white),
