@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
     "assets/images/ibnul.JPG",
     "assets/images/mariya.jpg",
     "assets/images/nahid.JPG",
-    "assets/images/saim.jpg"
+    "assets/images/saim.jpg",
   ];
   final List<String> userNames = ["Firad", "Ibnul", "Mariya", "Nahid", "Saim"];
 
@@ -32,37 +32,31 @@ class _HomeState extends State<Home> {
         elevation: 0,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Custom_Star_Image(
-            alignment: Alignment.topLeft,
-          ),
+          child: Custom_Star_Image(alignment: Alignment.topLeft),
         ),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(
-              Icons.search,
-              size: 45,
-              color: Colors.white,
-            ),
-          )
+            icon: Icon(Icons.search, size: 45, color: Colors.white),
+          ),
         ],
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Colors.black, Color(0xFF3B2F2F)],
-                begin: Alignment.bottomLeft,
-                end: Alignment.topRight)),
+          gradient: LinearGradient(
+            colors: [Colors.black, Color(0xFF3B2F2F)],
+            begin: Alignment.bottomLeft,
+            end: Alignment.topRight,
+          ),
+        ),
         child: SafeArea(
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 10,
-                ),
+                SizedBox(height: 10),
                 SizedBox(
                   height: width * 0.25,
                   child: ListView.builder(
@@ -72,28 +66,30 @@ class _HomeState extends State<Home> {
                     itemBuilder: (context, index) {
                       if (index == 0) {
                         return Padding(
-                          padding:
-                          const EdgeInsets.symmetric(horizontal: 5.0),
+                          padding: const EdgeInsets.symmetric(horizontal: 5.0),
                           child: Column(
                             children: [
                               CircleAvatar(
-                                  radius: 30,
-                                  backgroundColor: Colors.transparent,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                          color: Colors.white, width: .8),
-                                      shape: BoxShape.circle,
+                                radius: 30,
+                                backgroundColor: Colors.transparent,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.white,
+                                      width: .8,
                                     ),
-                                    child: IconButton(
-                                        onPressed: () {},
-                                        icon: Icon(
-                                          Icons.add,
-                                          color: Colors.white,
-                                        )),
-                                  )),
-                              Text("Add Story",
-                                  style: TextStyle(color: Colors.white)),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: IconButton(
+                                    onPressed: () {},
+                                    icon: Icon(Icons.add, color: Colors.white),
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                "Add Story",
+                                style: TextStyle(color: Colors.white),
+                              ),
                             ],
                           ),
                         );
@@ -107,14 +103,12 @@ class _HomeState extends State<Home> {
                 ),
                 const SizedBox(height: 10),
                 buildPostCard(context),
-                buildPostCard(context)
+                buildPostCard(context),
               ],
             ),
           ),
         ),
       ),
-
-
 
       extendBody: true,
       bottomNavigationBar: CurvedNavigationBar(
@@ -136,11 +130,6 @@ class _HomeState extends State<Home> {
           });
         },
       ),
-
-
-
-
-
     );
   }
 }
@@ -150,10 +139,7 @@ Widget buildStory(String imgPath, String name) {
     padding: const EdgeInsets.symmetric(horizontal: 8.0),
     child: Column(
       children: [
-        CircleAvatar(
-          radius: 30,
-          backgroundImage: AssetImage(imgPath),
-        ),
+        CircleAvatar(radius: 30, backgroundImage: AssetImage(imgPath)),
         Text(name, style: const TextStyle(color: Colors.white)),
       ],
     ),
@@ -165,10 +151,12 @@ Widget buildPostCard(BuildContext context) {
     // height: MediaQuery.of(context).size.height,
     // width: MediaQuery.of(context).size.width,
     decoration: BoxDecoration(
-        gradient: LinearGradient(
-            colors: [Colors.black, Color(0xFF3B2F2F)],
-            begin: Alignment.bottomLeft,
-            end: Alignment.topRight)),
+      gradient: LinearGradient(
+        colors: [Colors.black, Color(0xFF3B2F2F)],
+        begin: Alignment.bottomLeft,
+        end: Alignment.topRight,
+      ),
+    ),
 
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -185,9 +173,10 @@ Widget buildPostCard(BuildContext context) {
             child: const Text(
               "Cameron Williamson",
               style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 12),
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 12,
+              ),
               maxLines: 1,
               overflow: TextOverflow.visible,
               softWrap: false,
@@ -195,8 +184,10 @@ Widget buildPostCard(BuildContext context) {
           ),
           subtitle: Transform.translate(
             offset: Offset(-6, 0),
-            child: const Text("7529 E. Pecan St.",
-                style: TextStyle(color: Colors.grey, fontSize: 11)),
+            child: const Text(
+              "7529 E. Pecan St.",
+              style: TextStyle(color: Colors.grey, fontSize: 11),
+            ),
           ),
           trailing: Transform.translate(
             offset: Offset(16, 0),
@@ -214,8 +205,10 @@ Widget buildPostCard(BuildContext context) {
               ),
               child: TextButton(
                 onPressed: () {},
-                child:
-                Text("Style Type", style: TextStyle(color: Colors.white)),
+                child: Text(
+                  "Style Type",
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
           ),
@@ -239,13 +232,16 @@ Widget buildPostCard(BuildContext context) {
                 bottom: 0,
                 right: 0,
                 child: Container(
-                  padding:
-                  const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 4,
+                  ),
                   decoration: BoxDecoration(
                     color: Colors.black,
                     borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(10),
-                        bottomRight: Radius.circular(18)),
+                      topLeft: Radius.circular(10),
+                      bottomRight: Radius.circular(18),
+                    ),
                   ),
                   child: Row(
                     children: const [
@@ -293,24 +289,7 @@ Widget buildPostCard(BuildContext context) {
                 ),
               ),
 
-
-
-
-
               //RatingBar
-
-
-
-
-
-
-
-
-
-
-
-
-
             ],
           ),
         ),
@@ -323,34 +302,28 @@ Widget buildPostCard(BuildContext context) {
               Row(
                 children: [
                   IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.favorite_border, color: Colors.white70)),
-                  Text(
-                    "Like",
-                    style: TextStyle(color: Colors.white),
-                  )
+                    onPressed: () {},
+                    icon: Icon(Icons.favorite_border, color: Colors.white70),
+                  ),
+                  Text("Like", style: TextStyle(color: Colors.white)),
                 ],
               ),
               Row(
                 children: [
                   IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.textsms_sharp, color: Colors.white70)),
-                  Text(
-                    "Comments",
-                    style: TextStyle(color: Colors.white),
-                  )
+                    onPressed: () {},
+                    icon: Icon(Icons.textsms_sharp, color: Colors.white70),
+                  ),
+                  Text("Comments", style: TextStyle(color: Colors.white)),
                 ],
               ),
               Row(
                 children: [
                   IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.bookmark_border, color: Colors.white70)),
-                  Text(
-                    "Save",
-                    style: TextStyle(color: Colors.white),
-                  )
+                    onPressed: () {},
+                    icon: Icon(Icons.bookmark_border, color: Colors.white70),
+                  ),
+                  Text("Save", style: TextStyle(color: Colors.white)),
                 ],
               ),
             ],
@@ -361,8 +334,3 @@ Widget buildPostCard(BuildContext context) {
     ),
   );
 }
-
-
-
-
-

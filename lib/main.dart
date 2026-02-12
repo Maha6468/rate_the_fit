@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      //home: Home(),
-      home: Splash_Screen(),
+      home: Home(),
+      //home: Splash_Screen(),
       // home: Login(),
     );
   }
