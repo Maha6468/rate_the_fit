@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       //home: Home(),
       //home: Splash_Screen(),
       // home: Login(),
-      home: NewPostScreen(),
+      home: Create_Post(),
     );
   }
 }
