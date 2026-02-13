@@ -22,7 +22,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
       backgroundColor: Colors.black,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -84,11 +84,11 @@ class _NewPostScreenState extends State<NewPostScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 25),
 
               Wrap(
                 spacing: 10,
-                runSpacing: 10,
+                runSpacing: 15,
                 children: tags.map((tag) {
                   final isSelected = selectedTags.contains(tag);
                   return GestureDetector(
@@ -100,11 +100,11 @@ class _NewPostScreenState extends State<NewPostScreen> {
                       });
                     },
                     child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 14, vertical: 8),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 8),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: Colors.white24),
+                        border: Border.all(color: Colors.white12),
                         color: isSelected
                             ? Colors.white12
                             : Colors.transparent,
@@ -116,30 +116,27 @@ class _NewPostScreenState extends State<NewPostScreen> {
                 }).toList(),
               ),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 30),
 
-              /// 🔹 Location Box
               Container(
-                padding:
-                const EdgeInsets.symmetric(horizontal: 14, vertical: 16),
+                padding:EdgeInsets.symmetric(horizontal: 14, vertical: 16),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(14),
-                  border: Border.all(color: Colors.white24),
+                  border: Border.all(color: Colors.white12),
                 ),
                 child: Row(
-                  children: const [
+                  children:[
                     Icon(Icons.location_on_outlined,
                         color: Colors.white70),
                     SizedBox(width: 8),
                     Text("Tag location",
-                        style: TextStyle(color: Colors.white70))
+                        style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold))
                   ],
                 ),
               ),
 
-              const Spacer(),
+               Spacer(),
 
-              /// 🔹 Post Button
               Container(
                 height: 60,
                 width: double.infinity,
