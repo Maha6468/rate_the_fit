@@ -6,7 +6,8 @@ class Custom_Elevated_Button extends StatelessWidget {
   final double height;
   final Color backgroundColor;
   final VoidCallback onPressed;
-  const Custom_Elevated_Button({super.key, required this.text, required this.width, required this.height, required this.onPressed, required this.backgroundColor});
+  final double circular_value;
+  const Custom_Elevated_Button({super.key, required this.text, required this.width, required this.height, required this.onPressed, required this.backgroundColor, required this.circular_value});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class Custom_Elevated_Button extends StatelessWidget {
             //backgroundColor: Color(0xFF261C12),
               backgroundColor: backgroundColor,
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10))
+                  borderRadius: BorderRadius.circular(circular_value))
 
           ),
           onPressed:onPressed, child:Row(
@@ -26,7 +27,7 @@ class Custom_Elevated_Button extends StatelessWidget {
         children: [
           Text(text,style: TextStyle(color: Colors.white,fontSize: 16,),),
           SizedBox(width: 10,),
-          Icon(Icons.arrow_right, color: Colors.white,)
+         // Icon(Icons.arrow_right, color: Colors.white,)
         ],
       )
       ),
