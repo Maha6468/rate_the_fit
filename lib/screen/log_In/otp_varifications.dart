@@ -105,6 +105,7 @@ class _OTP_VarificationState extends State<OTP_Varification> {
                   Center(child: Custom_Elevated_Button(
                     text: 'Submit', height: 60, width: 300,
                     backgroundColor: Color(0xFF261C12),
+                    circular_value: 10,
                     onPressed: () {
 
                       showDialog(context: context, barrierDismissible: true, builder: (context) => Congratulations(),);
@@ -115,7 +116,7 @@ class _OTP_VarificationState extends State<OTP_Varification> {
                       });
 
 
-                    },))
+                    }, ))
 
 
                 ],
