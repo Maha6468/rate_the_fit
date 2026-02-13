@@ -22,54 +22,50 @@ class _NewPostScreenState extends State<NewPostScreen> {
       backgroundColor: Colors.black,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              /// 🔹 Top Bar
               Row(
                 children: [
-                  const Icon(Icons.close, color: Colors.white),
-                  const SizedBox(width: 10),
-                  const Text(
-                    "New Post",
-                    style: TextStyle(
+                   Icon(Icons.close, color: Colors.white),
+                   SizedBox(width: 10),
+                   Text("New Post", style: TextStyle(
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: 20,
                         fontWeight: FontWeight.w500),
                   )
                 ],
               ),
 
-              const SizedBox(height: 25),
+               SizedBox(height: 25),
 
-              /// 🔹 Upload Photo Box
               Container(
                 height: 140,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
-                  gradient: const LinearGradient(
-                    colors: [Color(0xff1a1a1a), Color(0xff2a2a2a)],
+                  gradient: LinearGradient(
+                    colors: [
+                      Color(0xff1a1a1a),
+                      Color(0xff2a2a2a)],
                   ),
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children:[
                     Icon(Icons.upload_file, color: Colors.white, size: 28),
                     SizedBox(height: 8),
-                    Text("Upload Photo",
-                        style: TextStyle(color: Colors.white70))
+                    Text("Upload Photo",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold))
                   ],
                 ),
               ),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
 
-              /// 🔹 Description Field
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
+                padding: EdgeInsets.symmetric(horizontal: 16),
                 decoration: BoxDecoration(
                   color: const Color(0xff1e1e1e),
                   borderRadius: BorderRadius.circular(10),
