@@ -14,7 +14,13 @@ class _NewPostScreenState extends State<Create_Post> {
   File? selectedImage;
   final ImagePicker _picker=ImagePicker();
   Future<void> pickImage(ImageSource source) async {
-    final XFile? image = await _picker.pickImage(source: source);
+    final XFile? image = await _picker.pickImage(
+        source: source,
+      imageQuality: 70,
+      maxWidth: 1080,
+
+
+    );
 
     if (image != null) {
       setState(() {
@@ -65,37 +71,6 @@ class _NewPostScreenState extends State<Create_Post> {
               ),
 
               SizedBox(height: 25),
-
-              // Container(
-              //   height: 140,
-              //   width: double.infinity,
-              //   decoration: BoxDecoration(
-              //     borderRadius: BorderRadius.circular(16),
-              //     gradient: LinearGradient(
-              //       colors: [
-              //         //Color(0xff1a1a1a),
-              //         //Color(0xff2a2a2a)
-              //         Color(0xFF1C1914),
-              //         Color(0xFF090C0E),
-              //       ],
-              //     ),
-              //   ),
-              //   child: Column(
-              //     mainAxisAlignment: MainAxisAlignment.center,
-              //     children: [
-              //       Icon(Icons.upload_file, color: Colors.white, size: 28),
-              //       SizedBox(height: 8),
-              //       Text(
-              //         "Upload Photo",
-              //         style: TextStyle(
-              //           color: Colors.white,
-              //           fontWeight: FontWeight.bold,
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // ),
-
 
               GestureDetector(
                 onTap: () {
@@ -158,8 +133,9 @@ class _NewPostScreenState extends State<Create_Post> {
                     borderRadius: BorderRadius.circular(16),
                     child: Image.file(
                       selectedImage!,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fill,
                       width: double.infinity,
+                      height: double.infinity,
                     ),
                   ),
                 ),
