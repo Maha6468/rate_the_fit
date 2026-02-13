@@ -58,9 +58,10 @@ class Sign_Up extends StatelessWidget {
                     text: 'Sign Up',
                     width: 300, height: 60,
                     backgroundColor: Color(0xFF261C12),
+                    circular_value:10,
                     onPressed: () {
                       Navigator.push(context,MaterialPageRoute(builder: (Context)=>OTP_Varification()));
-                    },)),
+                    }, )),
                   SizedBox(height: 30),
                   Row(
                     children:[
