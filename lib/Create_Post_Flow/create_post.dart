@@ -48,8 +48,11 @@ class _NewPostScreenState extends State<NewPostScreen> {
                   borderRadius: BorderRadius.circular(16),
                   gradient: LinearGradient(
                     colors: [
-                      Color(0xff1a1a1a),
-                      Color(0xff2a2a2a)],
+                      //Color(0xff1a1a1a),
+                      //Color(0xff2a2a2a)
+                      Color(0xFF1C1914),
+                      Color(0xFF090C0E),
+                    ],
                   ),
                 ),
                 child: Column(
@@ -67,23 +70,22 @@ class _NewPostScreenState extends State<NewPostScreen> {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 decoration: BoxDecoration(
-                  color: const Color(0xff1e1e1e),
+                  //color: Color(0xff1e1e1e),
+                  color: Color(0xFF1C1914),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: const TextField(
+                child: TextField(
                   maxLines: 3,
                   style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: "What Are you waring?",
-                    hintStyle: TextStyle(color: Colors.white54),
+                    hintStyle: TextStyle(color: Colors.white),
                   ),
                 ),
               ),
+              SizedBox(height: 20),
 
-              const SizedBox(height: 20),
-
-              /// 🔹 Tags (Selectable Chips)
               Wrap(
                 spacing: 10,
                 runSpacing: 10,
