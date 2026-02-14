@@ -60,7 +60,6 @@ class MessagesScreen extends StatelessWidget {
                       hintStyle: TextStyle(color: Colors.white),
                       prefixIcon: const Icon(Icons.search,size: 30,color: Colors.white,),
                       filled: true,
-                      //fillColor: Colors.grey[900],
                       fillColor: Color(0x000000),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
@@ -94,39 +93,39 @@ class MessagesScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final chat = chats[index];
                   return Card(
-                    //color: Colors.grey[900],
                     color: Color(0x000000),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18),
+                      borderRadius: BorderRadius.circular(20),
                         side: BorderSide( color: Colors.white12)
                     ),
-                    margin: const EdgeInsets.only(bottom: 12),
+                    margin: EdgeInsets.symmetric(vertical: 10),
                     child: ListTile(
-                      contentPadding: const EdgeInsets.all(12),
+                      contentPadding: EdgeInsets.all(12),
                       leading: CircleAvatar(
                         radius: 28,
                         backgroundImage: NetworkImage(chat["image"]!),
                       ),
                       title: Text(
                         chat["name"]!,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                          fontSize: 18,
+                          color: Colors.white
                         ),
                       ),
                       subtitle: Text(
                         chat["message"]!,
                         style: TextStyle(
-                          color: Colors.grey[400],
+                          color: Colors.grey,
                         ),
                       ),
                       trailing: Container(
-                        padding: const EdgeInsets.all(8),
+                        padding: EdgeInsets.all(8),
                         decoration: const BoxDecoration(
-                          color: Colors.orange,
+                          color: Colors.grey,
                           shape: BoxShape.circle,
                         ),
-                        child: const Text(
+                        child: Text(
                           "1",
                           style: TextStyle(
                             color: Colors.white,
@@ -137,10 +136,6 @@ class MessagesScreen extends StatelessWidget {
                       ),
                     ),
                   );
-
-
-
-
                 },
               ),
             ),
