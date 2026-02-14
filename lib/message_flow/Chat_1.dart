@@ -60,7 +60,8 @@ class MessagesScreen extends StatelessWidget {
                       hintStyle: TextStyle(color: Colors.white),
                       prefixIcon: const Icon(Icons.search,size: 30,color: Colors.white,),
                       filled: true,
-                      fillColor: Colors.grey[900],
+                      //fillColor: Colors.grey[900],
+                      fillColor: Color(0x000000),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
                         borderSide: BorderSide(
@@ -75,8 +76,7 @@ class MessagesScreen extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    //color: Colors.orange,
-                    color: Colors.grey[900],
+                    color: Color(0x000000),
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(color: Colors.white12)
                   ),
@@ -87,71 +87,18 @@ class MessagesScreen extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 40),
             Expanded(
               child: ListView.builder(
                 itemCount: chats.length,
                 itemBuilder: (context, index) {
                   final chat = chats[index];
-                  // return Container(
-                  //   margin: EdgeInsets.only(bottom: 12),
-                  //   padding: EdgeInsets.all(12),
-                  //   decoration: BoxDecoration(
-                  //     color: Colors.grey[900],
-                  //     borderRadius: BorderRadius.circular(12),
-                  //   ),
-                  //   child: Row(
-                  //     children: [
-                  //       CircleAvatar(
-                  //         radius: 28,
-                  //         backgroundImage: NetworkImage(chat["image"]!),
-                  //       ),
-                  //       const SizedBox(width: 12),
-                  //       Expanded(
-                  //         child: Column(
-                  //           crossAxisAlignment: CrossAxisAlignment.start,
-                  //           children: [
-                  //             Text(
-                  //               chat["name"]!,
-                  //               style: const TextStyle(
-                  //                 fontWeight: FontWeight.bold,
-                  //                 fontSize: 16,
-                  //               ),
-                  //             ),
-                  //             const SizedBox(height: 4),
-                  //             Text(
-                  //               chat["message"]!,
-                  //               style: TextStyle(
-                  //                 color: Colors.grey[400],
-                  //               ),
-                  //             ),
-                  //           ],
-                  //         ),
-                  //       ),
-                  //       Container(
-                  //         padding: const EdgeInsets.all(8),
-                  //         decoration: BoxDecoration(
-                  //           color: Colors.orange,
-                  //           shape: BoxShape.circle,
-                  //         ),
-                  //         child: const Text(
-                  //           "1",
-                  //           style: TextStyle(
-                  //             color: Colors.white,
-                  //             fontSize: 12,
-                  //             fontWeight: FontWeight.bold,
-                  //           ),
-                  //         ),
-                  //       )
-                  //     ],
-                  //   ),
-                  // );
-
-
                   return Card(
-                    color: Colors.grey[900], // আগে container এর color
+                    //color: Colors.grey[900],
+                    color: Color(0x000000),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(18),
+                        side: BorderSide( color: Colors.white12)
                     ),
                     margin: const EdgeInsets.only(bottom: 12),
                     child: ListTile(
