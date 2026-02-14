@@ -4,7 +4,7 @@ import 'package:rate_the_fit/splash_screen.dart';
 
 import 'Create_Post_Flow/create_post.dart';
 import 'message_flow/Chat_1.dart';
-import 'message_flow/chat1.dart';
+
 
 
 void main() {
