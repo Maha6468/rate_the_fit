@@ -3,6 +3,8 @@ import 'package:rate_the_fit/screen/home_flow/home.dart';
 import 'package:rate_the_fit/splash_screen.dart';
 
 import 'Create_Post_Flow/create_post.dart';
+import 'message_flow/Chat_1.dart';
+import 'message_flow/chat1.dart';
 
 
 void main() {
@@ -23,7 +25,9 @@ class MyApp extends StatelessWidget {
       //home: Home(),
       //home: Splash_Screen(),
       // home: Login(),
-      home: Create_Post(),
+      //home: Create_Post(),
+      //home: MessageListScreen(),
+      home: MessagesScreen(),
     );
   }
 }
