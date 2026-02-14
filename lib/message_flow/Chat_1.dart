@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class MessagesScreen extends StatelessWidget {
-  const MessagesScreen({super.key});
+
+class Chat_1 extends StatelessWidget {
+  const Chat_1({super.key});
 
   final List<Map<String, String>> chats = const [
     {
@@ -141,6 +142,7 @@ class MessagesScreen extends StatelessWidget {
           ],
         ),
       ),
+
       floatingActionButton: SizedBox(
         width: 70,height: 70,
         child: FloatingActionButton(
@@ -173,6 +175,7 @@ class MessagesScreen extends StatelessWidget {
           ),
         ),
       ),
+
     );
   }
 }
