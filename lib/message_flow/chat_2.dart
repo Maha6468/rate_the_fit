@@ -292,8 +292,6 @@ class ActivityBody extends StatelessWidget {
   }
 }
 
-
-
 Widget FilterSection() {
   List<String> filters = ["All", "Activity", "Follows", "Likes", "Comments"];
 
@@ -314,12 +312,11 @@ Widget FilterSection() {
               style: const TextStyle(color: Colors.white)),
         );
       },
-      separatorBuilder: (_, __) => const SizedBox(width: 10),
+      separatorBuilder: (_, __) => SizedBox(width: 10),
       itemCount: filters.length,
     ),
   );
 }
-
 
 
 
