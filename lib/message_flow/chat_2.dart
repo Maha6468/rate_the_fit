@@ -326,7 +326,7 @@ class ActivityList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       padding: const EdgeInsets.symmetric(vertical: 10),
-      children: const [
+      children: [
         NotificationItem(
           image: "assets/user1.jpg",
           username: "duncan",
@@ -352,6 +352,8 @@ class ActivityList extends StatelessWidget {
   }
 }
 
+
+
 class ActivityTile extends StatelessWidget {
   final String image;
   final String text;
@@ -369,7 +371,7 @@ class ActivityTile extends StatelessWidget {
     return ListTile(
       leading: CircleAvatar(backgroundImage: AssetImage(image)),
       title: Text(text, style: const TextStyle(color: Colors.white)),
-      trailing: Text(time, style: const TextStyle(color: Colors.grey)),
+      trailing: Text(time, style: const TextStyle(color: Colors.grey,)),
     );
   }
 }
