@@ -353,32 +353,32 @@ class ActivityList extends StatelessWidget {
 }
 
 
+//
+// class ActivityTile extends StatelessWidget {
+//   final String image;
+//   final String text;
+//   final String time;
+//
+//   const ActivityTile({
+//     super.key,
+//     required this.image,
+//     required this.text,
+//     required this.time,
+//   });
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return ListTile(
+//       leading: CircleAvatar(backgroundImage: AssetImage(image)),
+//       title: Text(text, style: const TextStyle(color: Colors.white)),
+//       trailing: Text(time, style: const TextStyle(color: Colors.grey,)),
+//     );
+//   }
+// }
 
-class ActivityTile extends StatelessWidget {
-  final String image;
-  final String text;
-  final String time;
-
-  const ActivityTile({
-    super.key,
-    required this.image,
-    required this.text,
-    required this.time,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      leading: CircleAvatar(backgroundImage: AssetImage(image)),
-      title: Text(text, style: const TextStyle(color: Colors.white)),
-      trailing: Text(time, style: const TextStyle(color: Colors.grey,)),
-    );
-  }
-}
 
 class CommentTile extends StatelessWidget {
   const CommentTile({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -391,7 +391,7 @@ class CommentTile extends StatelessWidget {
             colors: [Colors.grey.shade900, Colors.grey.shade800],
           ),
         ),
-        child: const Text(
+        child: Text(
           "I have this First",
           style: TextStyle(color: Colors.white70),
         ),
@@ -426,6 +426,9 @@ class CustomBottomBar extends StatelessWidget {
   }
 }
 
+
+
+
 class NotificationItem extends StatelessWidget {
   final String image;
   final String username;
@@ -447,7 +450,6 @@ class NotificationItem extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          /// Avatar
           CircleAvatar(radius: 22, backgroundImage: AssetImage(image)),
 
           const SizedBox(width: 12),
@@ -473,7 +475,7 @@ class NotificationItem extends StatelessWidget {
                   const TextSpan(text: "   "),
                   TextSpan(
                     text: "• $time",
-                    style: const TextStyle(color: Colors.grey, fontSize: 12),
+                    style: const TextStyle(color: Colors.red, fontSize: 13),
                   ),
                 ],
               ),
@@ -541,7 +543,6 @@ class CommentItem extends StatelessWidget {
 
           const SizedBox(height: 10),
 
-          /// Comment Bubble (important padding!)
           Padding(
             padding: const EdgeInsets.only(left: 56),
             child: Container(
