@@ -322,7 +322,6 @@ Widget FilterSection() {
 
 class ActivityList extends StatelessWidget {
   const ActivityList({super.key});
-
   @override
   Widget build(BuildContext context) {
     return ListView(
