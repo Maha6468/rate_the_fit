@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -17,14 +16,49 @@ class ActivityScreen extends StatelessWidget {
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
         ),
       ),
-      body:
-      ActivityBody(),
+      body:Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Text(
+                  "Activity (3)",
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
+                SizedBox(width: 30),
+                Text(
+                  "Message (5)",
+                  style: TextStyle(color: Colors.grey, fontSize: 18),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 15),
+          FilterSection(),
+          SizedBox(height: 20),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              "Last 7 Days",
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            ),
+          ),
+          SizedBox(height: 10),
+          Expanded(child: ActivityList()),
+        ],
+      ),
+
 
       floatingActionButton: SizedBox(
-        width: 70,height: 70,
+        width: 70,
+        height: 70,
         child: FloatingActionButton(
           onPressed: () {},
-          child: const Icon(Icons.add,size: 35,color: Colors.white,),
+          child: const Icon(Icons.add, size: 35, color: Colors.white),
           backgroundColor: Colors.grey.shade800,
           shape: CircleBorder(),
         ),
@@ -33,9 +67,7 @@ class ActivityScreen extends StatelessWidget {
       bottomNavigationBar: BottomAppBar(
         color: Colors.grey.shade800,
         //color: Colors.amberAccent,
-        shape: CircularNotchedRectangle(
-
-        ),
+        shape: CircularNotchedRectangle(),
         notchMargin: 6,
         elevation: 10,
         child: SizedBox(
@@ -43,82 +75,21 @@ class ActivityScreen extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: const [
-              Icon(Icons.home, color: Colors.white,size: 30,),
-              Icon(Icons.star, color: Colors.white,size: 30,),
+              Icon(Icons.home, color: Colors.white, size: 30),
+              Icon(Icons.star, color: Colors.white, size: 30),
               SizedBox(width: 48),
-              Icon(Icons.chat_bubble, color: Colors.white,size: 30,),
-              Icon(Icons.person, color: Colors.white,size: 30,),
+              Icon(Icons.chat_bubble, color: Colors.white, size: 30),
+              Icon(Icons.person, color: Colors.white, size: 30),
             ],
           ),
         ),
       ),
-
-
-    );
-  }
-}
-
-class ActivityBody extends StatelessWidget {
-  const ActivityBody({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const SizedBox(height: 10),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child:
-          // Row(
-          //   children: const [
-          //     Text(
-          //       "Activity (3)",
-          //       style: TextStyle(
-          //         color: Colors.white,
-          //         fontSize: 18,
-          //         fontWeight: FontWeight.bold,
-          //       ),
-          //     ),
-          //     SizedBox(width: 20),
-          //     Text(
-          //       "Message (5)",
-          //       style: TextStyle(color: Colors.grey, fontSize: 18),
-          //     ),
-          //
-          //
-          //   ],
-          // ),
-
-    Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Text("Activity (3)",
-              style: TextStyle(color: Colors.white, fontSize: 18)),
-          SizedBox(width: 30),
-          Text("Message (5)",
-              style: TextStyle(color: Colors.grey, fontSize: 18)),
-        ],
-      ),
-
-        ),
-        SizedBox(height: 15),
-        FilterSection(),
-        SizedBox(height: 20),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16),
-          child: Text("Last 7 Days", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
-        ),
-        SizedBox(height: 10),
-        Expanded(child: ActivityList()),
-      ],
     );
   }
 }
 
 Widget FilterSection() {
   List<String> filters = ["All", "Activity", "Follows", "Likes", "Comments"];
-
   return SizedBox(
     height: 40,
     child: ListView.separated(
@@ -132,8 +103,10 @@ Widget FilterSection() {
             borderRadius: BorderRadius.circular(12),
             border: Border.all(color: Colors.white24),
           ),
-          child: Text(filters[index],
-              style: const TextStyle(color: Colors.white)),
+          child: Text(
+            filters[index],
+            style: const TextStyle(color: Colors.white),
+          ),
         );
       },
       separatorBuilder: (_, __) => SizedBox(width: 10),
@@ -142,10 +115,9 @@ Widget FilterSection() {
   );
 }
 
-
-
 class ActivityList extends StatelessWidget {
   const ActivityList({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -176,7 +148,6 @@ class ActivityList extends StatelessWidget {
   }
 }
 
-
 //
 // class ActivityTile extends StatelessWidget {
 //   final String image;
@@ -200,9 +171,9 @@ class ActivityList extends StatelessWidget {
 //   }
 // }
 
-
 class CommentTile extends StatelessWidget {
   const CommentTile({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -249,9 +220,6 @@ class CustomBottomBar extends StatelessWidget {
     );
   }
 }
-
-
-
 
 class NotificationItem extends StatelessWidget {
   final String image;
