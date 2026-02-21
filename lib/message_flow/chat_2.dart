@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ActivityScreen extends StatelessWidget {
-  const ActivityScreen({super.key});
+class Chat_2 extends StatelessWidget {
+  const Chat_2({super.key});
 
   @override
   Widget build(BuildContext context) {

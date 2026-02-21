@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rate_the_fit/message_flow/chat_inner.dart';
 import 'package:rate_the_fit/screen/home_flow/home.dart';
 import 'package:rate_the_fit/splash_screen.dart';
 
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
       //home: Create_Post(),
       //home: MessageListScreen(),
       //home: Chat_1(),
-      home: ActivityScreen(),
+      //home: Chat_2(),
+      home: Chat_Inner(),
     );
   }
 }
