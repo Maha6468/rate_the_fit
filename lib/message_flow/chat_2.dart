@@ -17,15 +17,43 @@ class ActivityScreen extends StatelessWidget {
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
         ),
       ),
-      body: ActivityBody(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Colors.black,
-        shape: const CircleBorder(),
-        child: const Icon(Icons.add, size: 30),
+      body:
+      ActivityBody(),
+
+      floatingActionButton: SizedBox(
+        width: 70,height: 70,
+        child: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.add,size: 35,color: Colors.white,),
+          backgroundColor: Colors.grey.shade800,
+          shape: CircleBorder(),
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: const CustomBottomBar(),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.grey.shade800,
+        //color: Colors.amberAccent,
+        shape: CircularNotchedRectangle(
+
+        ),
+        notchMargin: 6,
+        elevation: 10,
+        child: SizedBox(
+          height: 60,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: const [
+              Icon(Icons.home, color: Colors.white,size: 30,),
+              Icon(Icons.star, color: Colors.white,size: 30,),
+              SizedBox(width: 48),
+              Icon(Icons.chat_bubble, color: Colors.white,size: 30,),
+              Icon(Icons.person, color: Colors.white,size: 30,),
+            ],
+          ),
+        ),
+      ),
+
+
     );
   }
 }
