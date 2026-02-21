@@ -16,17 +16,15 @@ class _Chat_InnerState extends State<Chat_Inner> {
       appBar: CustomChatAppBar(),
       body:Column(
         children: [
+
           Expanded(child: ChatList()),
+
           MessageInputBar(),
         ],
       )
     );
   }
 }
-
-
-
-
 
 
 class CustomChatAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -78,69 +76,35 @@ class CustomChatAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 }
 
-
 class ChatList extends StatelessWidget {
   const ChatList({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.only(top: 10),
-      children: const [
-        ChatBubble(message: "Lorem Ipsum is simply dummy text", isMe: true),
-        ChatBubble(message: "Lorem Ipsum is simply dummy text", isMe: false),
-        ChatBubble(message: "Lorem Ipsum is simply dummy text", isMe: true),
-        ChatBubble(message: "Lorem Ipsum is simply dummy text", isMe: false),
-        ChatBubble(message: "Lorem Ipsum is simply dummy text", isMe: true),
-      ],
+
+    final List<Map<String, dynamic>> messages = [
+      {"text": "Lorem Ipsum is simply dummy text of the printing", "isMe": true},
+      {"text": "Lorem Ipsum is simply dummy text of the printing", "isMe": false},
+      {"text": "Lorem Ipsum is simply dummy text of the printing", "isMe": true},
+      {"text": "Lorem Ipsum is simply dummy text of the printing", "isMe": false},
+      {"text": "Lorem Ipsum is simply dummy text of the printing", "isMe": true},
+      {"text": "Lorem Ipsum is simply dummy text of the printing", "isMe": true},
+      {"text": "Lorem Ipsum is simply dummy text of the printing", "isMe": false},
+      {"text": "Lorem Ipsum is simply dummy text of the printing", "isMe": false},
+    ];
+
+    return ListView.builder(
+      padding: const EdgeInsets.only(top: 30),
+      itemCount: messages.length,
+      itemBuilder: (context, index) {
+        return ChatBubble(
+          message: messages[index]["text"],
+          isMe: messages[index]["isMe"],
+        );
+      },
     );
   }
 }
-
-
-
-class MessageInputBar extends StatelessWidget {
-  const MessageInputBar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(12),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        height: 60,
-        decoration: BoxDecoration(
-          color: const Color(0xff2a201a),
-          borderRadius: BorderRadius.circular(30),
-        ),
-        child: Row(
-          children: [
-            const Icon(Icons.camera_alt, color: Colors.white70),
-
-            const SizedBox(width: 10),
-
-            const Expanded(
-              child: TextField(
-                style: TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                  hintText: "Type Your message here.....",
-                  hintStyle: TextStyle(color: Colors.white54),
-                  border: InputBorder.none,
-                ),
-              ),
-            ),
-
-            const Icon(Icons.mic, color: Colors.white70),
-            const SizedBox(width: 10),
-            const Icon(Icons.image_outlined, color: Colors.white70),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-
 
 class ChatBubble extends StatelessWidget {
   final String message;
@@ -153,18 +117,57 @@ class ChatBubble extends StatelessWidget {
     return Align(
       alignment: isMe ? Alignment.centerRight : Alignment.centerLeft,
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
         constraints: const BoxConstraints(maxWidth: 260),
         decoration: BoxDecoration(
           color: isMe
               ? const Color(0xff3b2a22)
               : const Color(0xff1c1c1e),
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(50),
         ),
         child: Text(
           message,
           style: const TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+  }
+}
+
+
+class MessageInputBar extends StatelessWidget {
+  const MessageInputBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(12),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        height: 70,
+        decoration: BoxDecoration(
+          color: const Color(0xff2a201a),
+          borderRadius: BorderRadius.circular(30),
+        ),
+        child: Row(
+          children: [
+            const Icon(Icons.camera_alt, color: Colors.white70,size: 30,),
+            const SizedBox(width: 10),
+            const Expanded(
+              child: TextField(
+                style: TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                  hintText: "Type Your message here.....",
+                  hintStyle: TextStyle(color: Colors.white54),
+                  border: InputBorder.none,
+                ),
+              ),
+            ),
+            const Icon(Icons.mic, color: Colors.white70,size: 30,),
+            const SizedBox(width: 10),
+            const Icon(Icons.image_outlined, color: Colors.white70,size: 30,),
+          ],
         ),
       ),
     );
