@@ -14,32 +14,29 @@ class _Chat_InnerState extends State<Chat_Inner> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: CustomChatAppBar(),
-      body:Column(
+      body: Column(
         children: [
-
           Expanded(child: ChatList()),
 
           MessageInputBar(),
         ],
-      )
+      ),
     );
   }
 }
-
 
 class CustomChatAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomChatAppBar({super.key});
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-
+  //Size get preferredSize => const Size.fromHeight(80);
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
       leading: const Icon(Icons.arrow_back, color: Colors.white),
-
       title: Row(
         children: const [
           CircleAvatar(
@@ -47,7 +44,6 @@ class CustomChatAppBar extends StatelessWidget implements PreferredSizeWidget {
             backgroundImage: AssetImage("assets/images/Darrell.png"),
           ),
           SizedBox(width: 10),
-
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,7 +62,7 @@ class CustomChatAppBar extends StatelessWidget implements PreferredSizeWidget {
         ],
       ),
 
-      actions: const [
+      actions: [
         Icon(Icons.call_outlined, color: Colors.white),
         SizedBox(width: 15),
         Icon(Icons.videocam_outlined, color: Colors.white),
@@ -81,16 +77,39 @@ class ChatList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final List<Map<String, dynamic>> messages = [
-      {"text": "Lorem Ipsum is simply dummy text of the printing", "isMe": true},
-      {"text": "Lorem Ipsum is simply dummy text of the printing", "isMe": false},
-      {"text": "Lorem Ipsum is simply dummy text of the printing", "isMe": true},
-      {"text": "Lorem Ipsum is simply dummy text of the printing", "isMe": false},
-      {"text": "Lorem Ipsum is simply dummy text of the printing", "isMe": true},
-      {"text": "Lorem Ipsum is simply dummy text of the printing", "isMe": true},
-      {"text": "Lorem Ipsum is simply dummy text of the printing", "isMe": false},
-      {"text": "Lorem Ipsum is simply dummy text of the printing", "isMe": false},
+      {
+        "text": "Lorem Ipsum is simply dummy text of the printing",
+        "isMe": true,
+      },
+      {
+        "text": "Lorem Ipsum is simply dummy text of the printing",
+        "isMe": false,
+      },
+      {
+        "text": "Lorem Ipsum is simply dummy text of the printing",
+        "isMe": true,
+      },
+      {
+        "text": "Lorem Ipsum is simply dummy text of the printing",
+        "isMe": false,
+      },
+      {
+        "text": "Lorem Ipsum is simply dummy text of the printing",
+        "isMe": true,
+      },
+      {
+        "text": "Lorem Ipsum is simply dummy text of the printing",
+        "isMe": true,
+      },
+      {
+        "text": "Lorem Ipsum is simply dummy text of the printing",
+        "isMe": false,
+      },
+      {
+        "text": "Lorem Ipsum is simply dummy text of the printing",
+        "isMe": false,
+      },
     ];
 
     return ListView.builder(
@@ -121,20 +140,14 @@ class ChatBubble extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
         constraints: const BoxConstraints(maxWidth: 260),
         decoration: BoxDecoration(
-          color: isMe
-              ? const Color(0xff3b2a22)
-              : const Color(0xff1c1c1e),
+          color: isMe ? const Color(0xff3b2a22) : const Color(0xff1c1c1e),
           borderRadius: BorderRadius.circular(50),
         ),
-        child: Text(
-          message,
-          style: const TextStyle(color: Colors.white),
-        ),
+        child: Text(message, style: const TextStyle(color: Colors.white)),
       ),
     );
   }
 }
-
 
 class MessageInputBar extends StatelessWidget {
   const MessageInputBar({super.key});
@@ -152,7 +165,7 @@ class MessageInputBar extends StatelessWidget {
         ),
         child: Row(
           children: [
-            const Icon(Icons.camera_alt, color: Colors.white70,size: 30,),
+            const Icon(Icons.camera_alt, color: Colors.white70, size: 30),
             const SizedBox(width: 10),
             const Expanded(
               child: TextField(
@@ -164,9 +177,9 @@ class MessageInputBar extends StatelessWidget {
                 ),
               ),
             ),
-            const Icon(Icons.mic, color: Colors.white70,size: 30,),
+            const Icon(Icons.mic, color: Colors.white70, size: 30),
             const SizedBox(width: 10),
-            const Icon(Icons.image_outlined, color: Colors.white70,size: 30,),
+            const Icon(Icons.image_outlined, color: Colors.white70, size: 30),
           ],
         ),
       ),
