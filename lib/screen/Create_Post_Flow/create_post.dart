@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
-import '../coustom_widget/custom_elevated_button.dart';
+import '../../coustom_widget/custom_elevated_button.dart';
 
 class Create_Post extends StatefulWidget {
   const Create_Post({super.key});
