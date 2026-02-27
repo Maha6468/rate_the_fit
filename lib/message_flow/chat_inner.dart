@@ -34,6 +34,7 @@ class CustomChatAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+
   //Size get preferredSize => const Size.fromHeight(80);
   @override
   Widget build(BuildContext context) {
@@ -161,7 +162,7 @@ class MessageInputBar extends StatefulWidget {
 }
 
 class _MessageInputBarState extends State<MessageInputBar> {
-  final ImagePicker _picker=ImagePicker();
+  final ImagePicker _picker = ImagePicker();
   File? _image;
 
   Future<void> openCamera() async {
@@ -173,21 +174,18 @@ class _MessageInputBarState extends State<MessageInputBar> {
     }
   }
 
-
-  final AudioRecorder _recorder=AudioRecorder();
-  bool _isRecording=false;
+  final AudioRecorder _recorder = AudioRecorder();
+  bool _isRecording = false;
   String? _filePath;
 
   Future<void> _startRecording() async {
     if (await _recorder.hasPermission()) {
       final dir = await getApplicationDocumentsDirectory();
 
-      _filePath = '${dir.path}/voice_${DateTime.now().millisecondsSinceEpoch}.m4a';
+      _filePath =
+          '${dir.path}/voice_${DateTime.now().millisecondsSinceEpoch}.m4a';
 
-      await _recorder.start(
-        const RecordConfig(),
-        path: _filePath!,
-      );
+      await _recorder.start(const RecordConfig(), path: _filePath!);
 
       setState(() => _isRecording = true);
     }
@@ -216,8 +214,6 @@ class _MessageInputBarState extends State<MessageInputBar> {
     }
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -230,11 +226,7 @@ class _MessageInputBarState extends State<MessageInputBar> {
               padding: const EdgeInsets.only(bottom: 8),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: Image.file(
-                  _image!,
-                  height: 80,
-                  fit: BoxFit.cover,
-                ),
+                child: Image.file(_image!, height: 80, fit: BoxFit.cover),
               ),
             ),
 
@@ -247,7 +239,10 @@ class _MessageInputBarState extends State<MessageInputBar> {
             ),
             child: Row(
               children: [
-                IconButton(onPressed:openCamera, icon: Icon(Icons.camera_alt, color: Colors.white70, size: 30)),
+                IconButton(
+                  onPressed: openCamera,
+                  icon: Icon(Icons.camera_alt, color: Colors.white70, size: 30),
+                ),
                 SizedBox(width: 10),
                 Expanded(
                   child: TextField(
@@ -267,11 +262,15 @@ class _MessageInputBarState extends State<MessageInputBar> {
                     size: 30,
                   ),
                 ),
-                 SizedBox(width: 10),
-                 //Icon(Icons.image_outlined, color: Colors.white70, size: 30),
+                SizedBox(width: 10),
+                //Icon(Icons.image_outlined, color: Colors.white70, size: 30),
                 IconButton(
                   onPressed: openGallery,
-                  icon: const Icon(Icons.image_outlined, color: Colors.white70, size: 30),
+                  icon: const Icon(
+                    Icons.image_outlined,
+                    color: Colors.white70,
+                    size: 30,
+                  ),
                 ),
               ],
             ),
