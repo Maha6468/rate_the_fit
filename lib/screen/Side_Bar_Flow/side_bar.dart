@@ -1,0 +1,126 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class CustomDrawer extends StatefulWidget {
+  const CustomDrawer({super.key});
+
+  @override
+  State<CustomDrawer> createState() => _CustomDrawerState();
+}
+
+class _CustomDrawerState extends State<CustomDrawer> {
+  bool isSwitched = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      backgroundColor: const Color(0xFF0D0702),
+      child: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildHeader(),
+            const SizedBox(height: 20),
+
+            _menuItem(Icons.person_outline, "Account Settings"),
+            _menuItem(Icons.notifications_none, "Notification",
+                showBadge: true),
+            _menuItem(Icons.search, "Notification Settings"),
+            _menuItem(Icons.tune, "Preferences"),
+            _menuItem(Icons.shield_outlined, "Privacy Settings"),
+            _menuItem(Icons.lock_outline, "Security Settings"),
+            _menuItem(Icons.help_outline, "FAQ"),
+            _menuItem(Icons.privacy_tip_outlined, "Privacy Policy"),
+            _menuItem(Icons.description_outlined, "Terms Of Services"),
+
+            const Spacer(),
+
+            _viewPortSwitch(),
+
+            const SizedBox(height: 20),
+            _logoutButton(),
+            const SizedBox(height: 20),
+          ],
+        ),
+      ),
+    );
+  }
+
+
+  Widget _buildHeader() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Row(
+        children: [
+          Container(
+            height: 50,
+            width: 50,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(color: Colors.amber, width: 2),
+            ),
+            child: const Icon(Icons.star, color: Colors.amber),
+          ),
+          const Spacer(),
+          const Icon(Icons.close, color: Colors.amber),
+        ],
+      ),
+    );
+  }
+
+
+  Widget _menuItem(IconData icon, String title, {bool showBadge = false}) {
+    return ListTile(
+      leading: Icon(icon, color: Colors.white70),
+      title: Row(
+        children: [
+          Text(title, style: const TextStyle(color: Colors.white70)),
+          if (showBadge)
+            Container(
+              margin: const EdgeInsets.only(left: 8),
+              padding: const EdgeInsets.all(4),
+              decoration: const BoxDecoration(
+                color: Colors.red,
+                shape: BoxShape.circle,
+              ),
+              child: const Text(
+                "1",
+                style: TextStyle(fontSize: 10, color: Colors.white),
+              ),
+            )
+        ],
+      ),
+      onTap: () {},
+    );
+  }
+
+
+  Widget _viewPortSwitch() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        children: [
+          const Text("View Port", style: TextStyle(color: Colors.white70)),
+          const Spacer(),
+          Switch(
+            value: isSwitched,
+            activeColor: Colors.amber,
+            onChanged: (value) {
+              setState(() {
+                isSwitched = value;
+              });
+            },
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _logoutButton() {
+    return ListTile(
+      leading: const Icon(Icons.logout, color: Colors.white70),
+      title: const Text("Log Out", style: TextStyle(color: Colors.white70)),
+      onTap: () {},
+    );
+  }
+}
