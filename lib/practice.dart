@@ -1,12 +1,13 @@
-
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class Home_P extends StatefulWidget {
   const Home_P({super.key});
+
   @override
   State<Home_P> createState() => _HomeState();
 }
+
 class _HomeState extends State<Home_P> {
   bool isMenuOpen = false;
   int _page = 0;
@@ -42,7 +43,6 @@ class _HomeState extends State<Home_P> {
         ],
       ),
 
-
       extendBody: true,
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.transparent,
@@ -75,7 +75,7 @@ class _HomeState extends State<Home_P> {
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [Colors.black, Color(0xFF3B2F2F)],
-         // begin: Alignment.bottomLeft,
+          // begin: Alignment.bottomLeft,
           end: Alignment.topRight,
         ),
       ),
@@ -83,9 +83,8 @@ class _HomeState extends State<Home_P> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
 
-              /// STORY LIST
               SizedBox(
                 height: width * 0.25,
                 child: ListView.builder(
@@ -93,9 +92,6 @@ class _HomeState extends State<Home_P> {
                   itemCount: userImage.length,
                   itemBuilder: (context, index) {
                     return _buildStory(userImage[index], userNames[index]);
-
-
-
                   },
                 ),
               ),
@@ -111,26 +107,38 @@ class _HomeState extends State<Home_P> {
     );
   }
 
+  Widget _buildStory(String img, String name) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      child: Column(
+        children: [
+          CircleAvatar(radius: 30, backgroundImage: AssetImage(img)),
+          const SizedBox(height: 5),
+          Text(name, style: const TextStyle(color: Colors.white)),
+        ],
+      ),
+    );
+  }
 
 
-Widget _buildStory(String img, String name) {
-  return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 8),
-    child: Column(
-      children: [
-        CircleAvatar(radius: 30, backgroundImage: AssetImage(img)),
-        const SizedBox(height: 5),
-        Text(name, style: const TextStyle(color: Colors.white)),
-      ],
-    ),
-  );
-}
+  Widget _buildPostCard() {
+    return Container(
+      margin: const EdgeInsets.all(16),
+      height: 200,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        image: const DecorationImage(
+          image: AssetImage("assets/images/firad.JPG"),
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
 
 
 
 
 
-  /// 🔥 DARK BACKGROUND
   Widget _buildOverlay() {
     return GestureDetector(
       onTap: () => setState(() => isMenuOpen = false),
@@ -171,7 +179,7 @@ Widget _buildStory(String img, String name) {
                 IconButton(
                   onPressed: () => setState(() => isMenuOpen = false),
                   icon: const Icon(Icons.close, color: Colors.amber),
-                )
+                ),
               ],
             ),
 
@@ -182,8 +190,6 @@ Widget _buildStory(String img, String name) {
             _menuItem(Icons.tune, "Preferences"),
             _menuItem(Icons.security, "Security Settings"),
             _menuItem(Icons.help_outline, "FAQ"),
-
-            const Spacer(),
 
             const Text("Log Out", style: TextStyle(color: Colors.white70)),
           ],
@@ -198,26 +204,11 @@ Widget _buildStory(String img, String name) {
       child: Row(
         children: [
           Icon(icon, color: Colors.white70),
-          const SizedBox(width: 14),
+          SizedBox(width: 14),
           Text(title, style: const TextStyle(color: Colors.white70)),
         ],
       ),
     );
   }
 
-
-  Widget _buildPostCard() {
-    return Container(
-      margin: const EdgeInsets.all(16),
-      height: 200,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        image: const DecorationImage(
-          image: AssetImage("assets/images/firad.JPG"),
-          fit: BoxFit.cover,
-        ),
-      ),
-    );
-  }
 }
-

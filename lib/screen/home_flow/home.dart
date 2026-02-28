@@ -12,6 +12,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  bool isMenuOpen=false;
   int _page = 0;
   final List<String> userImage = [
     "assets/images/firad.JPG",
@@ -41,75 +42,89 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
-      body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.black, Color(0xFF3B2F2F)],
-            begin: Alignment.bottomLeft,
-            end: Alignment.topRight,
+      body: Stack(
+        children: [
+         Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.black, Color(0xFF3B2F2F)],
+              begin: Alignment.bottomLeft,
+              end: Alignment.topRight,
+            ),
           ),
-        ),
-        child: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: 16),
-                SizedBox(
-                  height: width * 0.25,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    padding: EdgeInsets.symmetric(horizontal: 10),
-                    itemCount: userImage.length + 1,
-                    itemBuilder: (context, index) {
-                      if (index == 0) {
-                        return Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                          child: Column(
-                            children: [
-                              CircleAvatar(
-                                radius: 30,
-                                backgroundColor: Colors.transparent,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Colors.white,
-                                      width: .8,
+          child: SafeArea(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 16),
+                  SizedBox(
+                    height: width * 0.25,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      itemCount: userImage.length + 1,
+                      itemBuilder: (context, index) {
+                        if (index == 0) {
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                            child: Column(
+                              children: [
+                                CircleAvatar(
+                                  radius: 30,
+                                  backgroundColor: Colors.transparent,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors.white,
+                                        width: .8,
+                                      ),
+                                      shape: BoxShape.circle,
                                     ),
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: IconButton(
-                                    onPressed: () {
-                                      print("maha");
-                                    },
-                                    icon: Icon(Icons.add, color: Colors.white),
+                                    child: IconButton(
+                                      onPressed: () {
+                                        print("maha");
+                                      },
+                                      icon: Icon(Icons.add, color: Colors.white),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Text(
-                                "Add Story",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ],
-                          ),
-                        );
-                      } else {
-                        final img = userImage[index - 1];
-                        final name = userNames[index - 1];
-                        return buildStory(img, name);
-                      }
-                    },
+                                Text(
+                                  "Add Story",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ],
+                            ),
+                          );
+                        } else {
+                          // final img = userImage[index - 1];
+                          // final name = userNames[index - 1];
+                          // return buildStory(img, name);
+                          return buildStory(
+                            userImage[index - 1],
+                            userNames[index - 1],
+                          );
+                        }
+                      },
+                    ),
                   ),
-                ),
-                SizedBox(height: 10),
-                buildPostCard(context),
-                buildPostCard(context),
-              ],
+                 // if (isMenuOpen) _buildOverlay(),
+
+                  SizedBox(height: 10),
+                  buildPostCard(context),
+                  buildPostCard(context),
+                ],
+              ),
             ),
           ),
         ),
+          if (isMenuOpen) _buildOverlay(),
+
+          // 🔹 Side Menu (THIS WAS MISSING)
+          _buildSideMenu(),
+        ]
       ),
 
       extendBody: true,
@@ -123,31 +138,123 @@ class _HomeState extends State<Home> {
           Icon(Icons.home, size: 30, color: Colors.white),
           Icon(Icons.star, size: 30, color: Colors.white),
           Icon(Icons.add, size: 30, color: Colors.white),
-          Icon(Icons.textsms_sharp, size: 30, color: Colors.white),
+          Icon(Icons.message, size: 30, color: Colors.white),
           Icon(Icons.person, size: 30, color: Colors.white),
         ],
 
+        // onTap: (index) {
+        //   setState(() {
+        //     _page = index;
+        //   });
+        // },
         onTap: (index) {
-          setState(() {
-            _page = index;
-          });
+          if (index == 4) {
+            setState(() => isMenuOpen = true);
+          } else {
+            setState(() => _page = index);
+          }
         },
+
       ),
     );
   }
+
+
+  //lets start
+  Widget _buildOverlay() {
+    return GestureDetector(
+      onTap: () => setState(() => isMenuOpen = false),
+      child: Container(color: Colors.black.withOpacity(0.6)),
+    );
+  }
+
+
+  Widget _buildSideMenu() {
+    final width = MediaQuery.of(context).size.width;
+
+    return AnimatedPositioned(
+      duration: const Duration(milliseconds: 300),
+      left: isMenuOpen ? 0 : -width * 0.75,
+      top: 0,
+      bottom: 0,
+      child: Container(
+        width: width * 0.75,
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+        decoration: const BoxDecoration(
+          color: Color(0xFF0D0702),
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(25),
+            bottomRight: Radius.circular(25),
+          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                const CircleAvatar(
+                  radius: 25,
+                  backgroundColor: Colors.amber,
+                  child: Icon(Icons.star, color: Colors.black),
+                ),
+                const Spacer(),
+                IconButton(
+                  onPressed: () => setState(() => isMenuOpen = false),
+                  icon: const Icon(Icons.close, color: Colors.amber),
+                ),
+              ],
+            ),
+
+            const SizedBox(height: 30),
+
+            _menuItem(Icons.person_outline, "Account Settings"),
+            _menuItem(Icons.notifications_none, "Notification"),
+            _menuItem(Icons.tune, "Preferences"),
+            _menuItem(Icons.security, "Security Settings"),
+            _menuItem(Icons.help_outline, "FAQ"),
+
+            const Text("Log Out", style: TextStyle(color: Colors.white70)),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _menuItem(IconData icon, String title) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 14),
+      child: Row(
+        children: [
+          Icon(icon, color: Colors.white70),
+          SizedBox(width: 14),
+          Text(title, style: const TextStyle(color: Colors.white70)),
+        ],
+      ),
+    );
+  }
+
+
+  Widget buildStory(String imgPath, String name) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: Column(
+        children: [
+          CircleAvatar(radius: 30, backgroundImage: AssetImage(imgPath)),
+          Text(name, style: const TextStyle(color: Colors.white)),
+        ],
+      ),
+    );
+  }
+
+
+
+
+
+
+
+
 }
 
-Widget buildStory(String imgPath, String name) {
-  return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-    child: Column(
-      children: [
-        CircleAvatar(radius: 30, backgroundImage: AssetImage(imgPath)),
-        Text(name, style: const TextStyle(color: Colors.white)),
-      ],
-    ),
-  );
-}
 
 Widget buildPostCard(BuildContext context) {
   return Container(

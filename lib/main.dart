@@ -26,8 +26,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home:Home_P(),
-      //home: Home(),
+      //home:Home_P(),
+      home: Home(),
       //home: Splash_Screen(),
       // home: Login(),
       //home: Create_Post(),
