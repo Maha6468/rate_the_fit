@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rate_the_fit/practice.dart';
 import 'package:rate_the_fit/screen/message_flow/chat_inner.dart';
 import 'package:rate_the_fit/screen/home_flow/home.dart';
 import 'package:rate_the_fit/splash_screen.dart';
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Home(),
+      home:Home_P(),
+      //home: Home(),
       //home: Splash_Screen(),
       // home: Login(),
       //home: Create_Post(),
