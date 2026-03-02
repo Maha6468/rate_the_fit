@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rate_the_fit/practice.dart';
 import 'package:rate_the_fit/screen/Side_Bar_Flow/account_settings.dart';
+import 'package:rate_the_fit/screen/Side_Bar_Flow/notification.dart';
 import 'package:rate_the_fit/screen/Side_Bar_Flow/notification_settings.dart';
 import 'package:rate_the_fit/screen/message_flow/chat_inner.dart';
 import 'package:rate_the_fit/screen/home_flow/home.dart';
@@ -39,8 +40,8 @@ class MyApp extends StatelessWidget {
       //home: CustomDrawer(),
       //home:CustomDrawer()
      // home: Account_Settings(),
-      home: Notification_Settings(),
-
+      //home: Notification_Settings(),
+      home: Notifications(),
     );
   }
 }
