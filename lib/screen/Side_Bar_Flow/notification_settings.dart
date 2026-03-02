@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class Notification_Settings extends StatefulWidget {
@@ -31,7 +31,6 @@ class _Notification_SettingsState extends State<Notification_Settings> {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
         child: Column(
           children: [
-            /// 🔹 Toggle Row
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -42,14 +41,12 @@ class _Notification_SettingsState extends State<Notification_Settings> {
                     fontSize: 16,
                   ),
                 ),
-
-                /// Switch
                 Transform.scale(
                   scale: 1.1,
                   child: Switch(
                     value: isNotificationEnabled,
                     activeColor: Colors.white,
-                    activeTrackColor: Colors.amber,
+                    activeTrackColor: Colors.amber.shade600,
                     inactiveThumbColor: Colors.white54,
                     inactiveTrackColor: Colors.white24,
                     onChanged: (value) {
@@ -64,7 +61,6 @@ class _Notification_SettingsState extends State<Notification_Settings> {
 
             const Spacer(),
 
-            /// 🔹 Save Button
             SizedBox(
               width: double.infinity,
               height: 55,
