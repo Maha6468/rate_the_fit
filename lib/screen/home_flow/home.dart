@@ -32,10 +32,18 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: Padding(
+        // leading: Padding(
+        //   padding: const EdgeInsets.all(8.0),
+        //   child: Custom_Star_Image(alignment: Alignment.topLeft),
+        // ),
+        leading: isMenuOpen
+            ? null
+            : Padding(
           padding: const EdgeInsets.all(8.0),
           child: Custom_Star_Image(alignment: Alignment.topLeft),
         ),
+
+
         actions: [
           IconButton(
             onPressed: () {},
@@ -119,8 +127,8 @@ class _HomeState extends State<Home> {
         ),
           if (isMenuOpen)
             _buildOverlay(),
-          //_buildSideMenu(),
-          CustomDrawer()
+          _buildSideMenu(),
+          //CustomDrawer()
         ]
       ),
 
@@ -163,7 +171,6 @@ class _HomeState extends State<Home> {
 
   Widget _buildSideMenu() {
     final width = MediaQuery.of(context).size.width;
-
     return AnimatedPositioned(
       duration: const Duration(milliseconds: 300),
       left: isMenuOpen ? 0 : -width * 0.75,

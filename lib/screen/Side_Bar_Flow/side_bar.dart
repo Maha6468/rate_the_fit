@@ -10,76 +10,56 @@ class CustomDrawer extends StatefulWidget {
 
 class _CustomDrawerState extends State<CustomDrawer> {
   bool isSwitched = true;
-  bool isMenuOpen=false;
+  bool isMenuOpen=true;
 
   @override
   Widget build(BuildContext context) {
+    
     return Drawer(
       backgroundColor: const Color(0xFF0D0702),
-      child: AnimatedPositioned(
-        duration: const Duration(milliseconds: 300),
-        left: isMenuOpen ? 0 : -width * 0.75,
-        top: 0,
-        bottom: 0,
-        child: Container(
-          width: width * 0.80,
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-          decoration: const BoxDecoration(
-            color: Color(0xFF0D0702),
-            borderRadius: BorderRadius.only(
-              topRight: Radius.circular(25),
-              bottomRight: Radius.circular(25),
+      child: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                const CircleAvatar(
+                  radius: 25,
+                  backgroundColor: Colors.amber,
+                  child: Icon(Icons.star, color: Colors.black),
+                ),
+                const Spacer(),
+                IconButton(
+                  onPressed: () => setState(() => isMenuOpen = false),
+                  icon: const Icon(Icons.close, color: Colors.amber),
+                ),
+              ],
             ),
-          ),
-
-
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  const CircleAvatar(
-                    radius: 25,
-                    backgroundColor: Colors.amber,
-                    child: Icon(Icons.star, color: Colors.black),
-                  ),
-                  const Spacer(),
-                  IconButton(
-                    onPressed: () => setState(() => isMenuOpen = false),
-                    icon: const Icon(Icons.close, color: Colors.amber),
-                  ),
-                ],
-              ),
-
-              _menuItem(Icons.person_outline, "Account Settings"),
-              _menuItem(Icons.notifications_none, "Notification",
-                  showBadge: true),
-              _menuItem(Icons.search, "Notification Settings"),
-              _menuItem(Icons.tune, "Preferences"),
-              _menuItem(Icons.shield_outlined, "Privacy Settings"),
-              _menuItem(Icons.lock_outline, "Security Settings"),
-              _menuItem(Icons.help_outline, "FAQ"),
-              _menuItem(Icons.privacy_tip_outlined, "Privacy Policy"),
-              _menuItem(Icons.description_outlined, "Terms Of Services"),
-
-              //const Spacer(),
-
-              _viewPortSwitch(),
-
-              const SizedBox(height: 20),
-              _logoutButton(),
-
-            ],
-          ),
+            
+            _menuItem(Icons.person_outline, "Account Settings"),
+            _menuItem(
+              Icons.notifications_none,
+              "Notification",
+              showBadge: true,
+            ),
+            _menuItem(Icons.search, "Notification Settings"),
+            _menuItem(Icons.tune, "Preferences"),
+            _menuItem(Icons.shield_outlined, "Privacy Settings"),
+            _menuItem(Icons.lock_outline, "Security Settings"),
+            _menuItem(Icons.help_outline, "FAQ"),
+            _menuItem(Icons.privacy_tip_outlined, "Privacy Policy"),
+            _menuItem(Icons.description_outlined, "Terms Of Services"),
+            
+            //const Spacer(),
+           // _viewPortSwitch(),
+            
+            const SizedBox(height: 20),
+            //_logoutButton(),
+          ],
         ),
       ),
     );
-
-
-
   }
-
-
 
   Widget _menuItem(IconData icon, String title, {bool showBadge = false}) {
     return ListTile(
@@ -99,13 +79,12 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 "1",
                 style: TextStyle(fontSize: 10, color: Colors.white),
               ),
-            )
+            ),
         ],
       ),
       onTap: () {},
     );
   }
-
 
   Widget _viewPortSwitch() {
     return Padding(
@@ -122,7 +101,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 isSwitched = value;
               });
             },
-          )
+          ),
         ],
       ),
     );
