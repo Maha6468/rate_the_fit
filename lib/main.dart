@@ -3,6 +3,7 @@ import 'package:rate_the_fit/practice.dart';
 import 'package:rate_the_fit/screen/Side_Bar_Flow/account_settings.dart';
 import 'package:rate_the_fit/screen/Side_Bar_Flow/notification.dart';
 import 'package:rate_the_fit/screen/Side_Bar_Flow/notification_settings.dart';
+import 'package:rate_the_fit/screen/Side_Bar_Flow/preferences_2.dart';
 import 'package:rate_the_fit/screen/message_flow/chat_inner.dart';
 import 'package:rate_the_fit/screen/home_flow/home.dart';
 import 'package:rate_the_fit/splash_screen.dart';
@@ -41,7 +42,8 @@ class MyApp extends StatelessWidget {
       //home:CustomDrawer()
      // home: Account_Settings(),
       //home: Notification_Settings(),
-      home: Notifications(),
+      //home: Notifications(),
+      home: Preferences_2(),
     );
   }
 }
