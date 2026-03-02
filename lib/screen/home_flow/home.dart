@@ -150,11 +150,11 @@ class _HomeState extends State<Home> {
   }
 
 
-  //lets start
+
   Widget _buildOverlay() {
     return GestureDetector(
       onTap: () => setState(() => isMenuOpen = false),
-      child: Container(color: Colors.black.withOpacity(0.6)),
+      child: Container(color: Colors.red.withOpacity(0.5)),
     );
   }
 
@@ -168,7 +168,7 @@ class _HomeState extends State<Home> {
       top: 0,
       bottom: 0,
       child: Container(
-        width: width * 0.75,
+        width: width * 0.80,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
         decoration: const BoxDecoration(
           color: Color(0xFF0D0702),
@@ -195,33 +195,56 @@ class _HomeState extends State<Home> {
               ],
             ),
 
-            const SizedBox(height: 30),
+            SizedBox(height: 10),
 
             _menuItem(Icons.person_outline, "Account Settings"),
-            _menuItem(Icons.notifications_none, "Notification"),
+            _menuItem(Icons.notifications_none, "Notification",
+                showBadge: true),
+            _menuItem(Icons.search, "Notification Settings"),
             _menuItem(Icons.tune, "Preferences"),
-            _menuItem(Icons.security, "Security Settings"),
+            _menuItem(Icons.shield_outlined, "Privacy Settings"),
+            _menuItem(Icons.lock_outline, "Security Settings"),
             _menuItem(Icons.help_outline, "FAQ"),
+            _menuItem(Icons.privacy_tip_outlined, "Privacy Policy"),
+            _menuItem(Icons.description_outlined, "Terms Of Services"),
 
-            const Text("Log Out", style: TextStyle(color: Colors.white70)),
+
+            //const Text("Log Out", style: TextStyle(color: Colors.white70)),
           ],
         ),
       ),
     );
   }
 
-  Widget _menuItem(IconData icon, String title) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 14),
-      child: Row(
+
+  Widget _menuItem(IconData icon, String title, {bool showBadge = false}) {
+    return ListTile(
+      leading: Icon(icon, color: Colors.white70),
+      title: Row(
         children: [
-          Icon(icon, color: Colors.white70),
-          SizedBox(width: 14),
           Text(title, style: const TextStyle(color: Colors.white70)),
+          if (showBadge)
+            Container(
+              margin: const EdgeInsets.only(left: 8),
+              padding: const EdgeInsets.all(4),
+              decoration: const BoxDecoration(
+                color: Colors.red,
+                shape: BoxShape.circle,
+              ),
+              child: const Text(
+                "1",
+                style: TextStyle(fontSize: 10, color: Colors.white),
+              ),
+            )
         ],
       ),
+      onTap: () {},
     );
   }
+
+
+
+
 
 
   Widget buildStory(String imgPath, String name) {
