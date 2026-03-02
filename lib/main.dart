@@ -26,7 +26,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      //home:Home_P(),
       home: Home(),
       //home: Splash_Screen(),
       // home: Login(),
@@ -36,6 +35,7 @@ class MyApp extends StatelessWidget {
       //home: Chat_2(),
       //home: Chat_Inner(),
       //home: CustomDrawer(),
+      //home:CustomDrawer()
     );
   }
 }

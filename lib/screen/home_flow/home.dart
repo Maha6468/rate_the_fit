@@ -99,9 +99,6 @@ class _HomeState extends State<Home> {
                             ),
                           );
                         } else {
-                          // final img = userImage[index - 1];
-                          // final name = userNames[index - 1];
-                          // return buildStory(img, name);
                           return buildStory(
                             userImage[index - 1],
                             userNames[index - 1],

@@ -33,13 +33,13 @@ class _CustomDrawerState extends State<CustomDrawer> {
             _menuItem(Icons.privacy_tip_outlined, "Privacy Policy"),
             _menuItem(Icons.description_outlined, "Terms Of Services"),
 
-            const Spacer(),
+            //const Spacer(),
 
             _viewPortSwitch(),
 
             const SizedBox(height: 20),
             _logoutButton(),
-            const SizedBox(height: 20),
+
           ],
         ),
       ),
