@@ -9,13 +9,6 @@ class Preferences_2 extends StatefulWidget {
 }
 
 class _Preferences_2State extends State<Preferences_2> {
-  // bool _casual = false;
-  // bool _formal = false;
-  // bool _streetwear = false;
-  // bool _professional = false;
-  // bool _cosy = false;
-
-
   List<String> options = [
     "Casual",
     "Formal",
@@ -62,48 +55,53 @@ class _Preferences_2State extends State<Preferences_2> {
             //color: Colors.grey[900],
             borderRadius: BorderRadius.circular(16),
           ),
-          child: ExpansionTile(
-            title: Text(
-              "Content Preference",
-              style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
+          child: Theme(
+            data: Theme.of(context).copyWith(
+              dividerColor: Colors.transparent,
             ),
-            iconColor: Colors.white,
-            collapsedIconColor: Colors.white,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: GridView.builder(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: options.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: 4,
-                  ),
-                  itemBuilder: (context, index) {
-                    String option = options[index];
-                    return Row(
-                      children: [
-                        Checkbox(
-                          value: selectedOptions[option],
-                          onChanged: (value) {
-                            setState(() {
-                              selectedOptions[option] = value!;
-                            });
-                          },
-                          checkColor: Colors.black,
-                          activeColor: Colors.white,
-                        ),
-                        Text(
-                          option,
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ],
-                    );
-                  },
-                ),
+            child: ExpansionTile(
+              title: Text(
+                "Content Preference",
+                style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
               ),
-            ],
+              iconColor: Colors.white,
+              collapsedIconColor: Colors.white,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: GridView.builder(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemCount: options.length,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 4,
+                    ),
+                    itemBuilder: (context, index) {
+                      String option = options[index];
+                      return Row(
+                        children: [
+                          Checkbox(
+                            value: selectedOptions[option],
+                            onChanged: (value) {
+                              setState(() {
+                                selectedOptions[option] = value!;
+                              });
+                            },
+                            checkColor: Colors.black,
+                            activeColor: Colors.white,
+                          ),
+                          Text(
+                            option,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
