@@ -22,10 +22,10 @@ class Notifications extends StatelessWidget {
       ),
       body: ListView.separated(
         padding: const EdgeInsets.only(top: 10),
-        itemCount: 6,
+        itemCount: 5,
         separatorBuilder: (_, __) => Divider(
-          color: Colors.white.withOpacity(0.05),
-          thickness: 1,
+          color: Colors.white.withOpacity(0.10),
+          thickness: 2,
         ),
         itemBuilder: (context, index) {
           return const _NotificationTile();
@@ -42,11 +42,9 @@ class _NotificationTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-
-      /// 🔹 Leading Circle Avatar
       leading: Container(
-        height: 45,
-        width: 45,
+        height: 50,
+        width: 50,
         decoration: const BoxDecoration(
           shape: BoxShape.circle,
           color: Color(0xFFB47B1F),
@@ -56,12 +54,10 @@ class _NotificationTile extends StatelessWidget {
           "N",
           style: TextStyle(
             color: Colors.white,
-            fontWeight: FontWeight.bold,
+            fontSize: 20
           ),
         ),
       ),
-
-      /// 🔹 Title + Subtitle
       title: const Text(
         "Ihr neuer Termin steht vor der Tür.",
         style: TextStyle(color: Colors.white, fontSize: 15),
