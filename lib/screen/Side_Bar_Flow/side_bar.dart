@@ -10,63 +10,75 @@ class CustomDrawer extends StatefulWidget {
 
 class _CustomDrawerState extends State<CustomDrawer> {
   bool isSwitched = true;
+  bool isMenuOpen=false;
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
       backgroundColor: const Color(0xFF0D0702),
-      child: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildHeader(),
-            const SizedBox(height: 20),
+      child: AnimatedPositioned(
+        duration: const Duration(milliseconds: 300),
+        left: isMenuOpen ? 0 : -width * 0.75,
+        top: 0,
+        bottom: 0,
+        child: Container(
+          width: width * 0.80,
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+          decoration: const BoxDecoration(
+            color: Color(0xFF0D0702),
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(25),
+              bottomRight: Radius.circular(25),
+            ),
+          ),
 
-            _menuItem(Icons.person_outline, "Account Settings"),
-            _menuItem(Icons.notifications_none, "Notification",
-                showBadge: true),
-            _menuItem(Icons.search, "Notification Settings"),
-            _menuItem(Icons.tune, "Preferences"),
-            _menuItem(Icons.shield_outlined, "Privacy Settings"),
-            _menuItem(Icons.lock_outline, "Security Settings"),
-            _menuItem(Icons.help_outline, "FAQ"),
-            _menuItem(Icons.privacy_tip_outlined, "Privacy Policy"),
-            _menuItem(Icons.description_outlined, "Terms Of Services"),
 
-            //const Spacer(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  const CircleAvatar(
+                    radius: 25,
+                    backgroundColor: Colors.amber,
+                    child: Icon(Icons.star, color: Colors.black),
+                  ),
+                  const Spacer(),
+                  IconButton(
+                    onPressed: () => setState(() => isMenuOpen = false),
+                    icon: const Icon(Icons.close, color: Colors.amber),
+                  ),
+                ],
+              ),
 
-            _viewPortSwitch(),
+              _menuItem(Icons.person_outline, "Account Settings"),
+              _menuItem(Icons.notifications_none, "Notification",
+                  showBadge: true),
+              _menuItem(Icons.search, "Notification Settings"),
+              _menuItem(Icons.tune, "Preferences"),
+              _menuItem(Icons.shield_outlined, "Privacy Settings"),
+              _menuItem(Icons.lock_outline, "Security Settings"),
+              _menuItem(Icons.help_outline, "FAQ"),
+              _menuItem(Icons.privacy_tip_outlined, "Privacy Policy"),
+              _menuItem(Icons.description_outlined, "Terms Of Services"),
 
-            const SizedBox(height: 20),
-            _logoutButton(),
+              //const Spacer(),
 
-          ],
+              _viewPortSwitch(),
+
+              const SizedBox(height: 20),
+              _logoutButton(),
+
+            ],
+          ),
         ),
       ),
     );
-  }
 
 
-  Widget _buildHeader() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Row(
-        children: [
-          Container(
-            height: 50,
-            width: 50,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(color: Colors.amber, width: 2),
-            ),
-            child: const Icon(Icons.star, color: Colors.amber),
-          ),
-          const Spacer(),
-          const Icon(Icons.close, color: Colors.amber),
-        ],
-      ),
-    );
+
   }
+
 
 
   Widget _menuItem(IconData icon, String title, {bool showBadge = false}) {

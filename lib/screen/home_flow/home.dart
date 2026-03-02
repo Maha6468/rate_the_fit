@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:rate_the_fit/screen/Side_Bar_Flow/side_bar.dart';
 
 import '../../coustom_widget/custom_star_image.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -118,7 +119,8 @@ class _HomeState extends State<Home> {
         ),
           if (isMenuOpen)
             _buildOverlay(),
-          _buildSideMenu(),
+          //_buildSideMenu(),
+          CustomDrawer()
         ]
       ),
 
@@ -207,44 +209,12 @@ class _HomeState extends State<Home> {
             _menuItem(Icons.help_outline, "FAQ"),
             _menuItem(Icons.privacy_tip_outlined, "Privacy Policy"),
             _menuItem(Icons.description_outlined, "Terms Of Services"),
-
-
             //const Text("Log Out", style: TextStyle(color: Colors.white70)),
           ],
         ),
       ),
     );
   }
-
-
-  Widget _menuItem(IconData icon, String title, {bool showBadge = false}) {
-    return ListTile(
-      leading: Icon(icon, color: Colors.white70),
-      title: Row(
-        children: [
-          Text(title, style: const TextStyle(color: Colors.white70)),
-          if (showBadge)
-            Container(
-              margin: const EdgeInsets.only(left: 8),
-              padding: const EdgeInsets.all(4),
-              decoration: const BoxDecoration(
-                color: Colors.red,
-                shape: BoxShape.circle,
-              ),
-              child: const Text(
-                "1",
-                style: TextStyle(fontSize: 10, color: Colors.white),
-              ),
-            )
-        ],
-      ),
-      onTap: () {},
-    );
-  }
-
-
-
-
 
 
   Widget buildStory(String imgPath, String name) {
@@ -260,14 +230,7 @@ class _HomeState extends State<Home> {
   }
 
 
-
-
-
-
-
-
 }
-
 
 Widget buildPostCard(BuildContext context) {
   return Container(
@@ -452,9 +415,33 @@ Widget buildPostCard(BuildContext context) {
             ],
           ),
         ),
-        //const SizedBox(height: 10),
       ],
     ),
   );
 }
 
+
+Widget _menuItem(IconData icon, String title, {bool showBadge = false}) {
+  return ListTile(
+    leading: Icon(icon, color: Colors.white70),
+    title: Row(
+      children: [
+        Text(title, style: const TextStyle(color: Colors.white70)),
+        if (showBadge)
+          Container(
+            margin: const EdgeInsets.only(left: 8),
+            padding: const EdgeInsets.all(4),
+            decoration: const BoxDecoration(
+              color: Colors.red,
+              shape: BoxShape.circle,
+            ),
+            child: const Text(
+              "1",
+              style: TextStyle(fontSize: 10, color: Colors.white),
+            ),
+          )
+      ],
+    ),
+    onTap: () {},
+  );
+}
