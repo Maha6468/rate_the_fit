@@ -39,9 +39,16 @@ class _Preferences_2State extends State<Preferences_2> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: Text("Preferences"),
-        leading: Icon(Icons.arrow_back),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: const Text(
+          "Notifications",
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
