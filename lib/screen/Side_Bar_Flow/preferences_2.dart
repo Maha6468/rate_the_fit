@@ -22,6 +22,11 @@ class _Preferences_2State extends State<Preferences_2> {
     "Streetwear",
     "Professional",
     "Cosy",
+    "Casual",
+    "Formal",
+    "Streetwear",
+    "Profession",
+    "Cosy"
   ];
 
   Map<String, bool> selectedOptions = {};
@@ -54,13 +59,13 @@ class _Preferences_2State extends State<Preferences_2> {
         padding: const EdgeInsets.all(16.0),
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.grey[900],
+            //color: Colors.grey[900],
             borderRadius: BorderRadius.circular(16),
           ),
           child: ExpansionTile(
             title: Text(
               "Content Preference",
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
             ),
             iconColor: Colors.white,
             collapsedIconColor: Colors.white,
@@ -72,7 +77,7 @@ class _Preferences_2State extends State<Preferences_2> {
                   physics: NeverScrollableScrollPhysics(),
                   itemCount: options.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2, // ২ কলাম
+                    crossAxisCount: 2,
                     childAspectRatio: 4,
                   ),
                   itemBuilder: (context, index) {
@@ -102,9 +107,6 @@ class _Preferences_2State extends State<Preferences_2> {
           ),
         ),
       ),
-
-
-
     );
   }
 }
