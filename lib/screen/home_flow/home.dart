@@ -107,7 +107,6 @@ class _HomeState extends State<Home> {
                       },
                     ),
                   ),
-                 // if (isMenuOpen) _buildOverlay(),
 
                   SizedBox(height: 10),
                   buildPostCard(context),
@@ -117,9 +116,8 @@ class _HomeState extends State<Home> {
             ),
           ),
         ),
-          if (isMenuOpen) _buildOverlay(),
-
-          // 🔹 Side Menu (THIS WAS MISSING)
+          if (isMenuOpen)
+            _buildOverlay(),
           _buildSideMenu(),
         ]
       ),
@@ -139,11 +137,6 @@ class _HomeState extends State<Home> {
           Icon(Icons.person, size: 30, color: Colors.white),
         ],
 
-        // onTap: (index) {
-        //   setState(() {
-        //     _page = index;
-        //   });
-        // },
         onTap: (index) {
           if (index == 4) {
             setState(() => isMenuOpen = true);
