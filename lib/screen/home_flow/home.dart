@@ -52,7 +52,7 @@ class _HomeState extends State<Home> {
         ],
       ),
       body: Stack(
-        children: [
+         children: [
          Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
@@ -125,9 +125,14 @@ class _HomeState extends State<Home> {
             ),
           ),
         ),
+
+
           if (isMenuOpen)
             _buildOverlay(),
-          _buildSideMenu(),
+          //_buildSideMenu(),
+          _buildSideMenu(() {
+            setState(() => isMenuOpen = false);
+          }),
           //CustomDrawer()
         ]
       ),
@@ -169,9 +174,10 @@ class _HomeState extends State<Home> {
   }
 
 
-  Widget _buildSideMenu() {
+  Widget _buildSideMenu(VoidCallback onClose) {
     final width = MediaQuery.of(context).size.width;
     return AnimatedPositioned(
+      key: ValueKey(isMenuOpen),
       duration: const Duration(milliseconds: 300),
       left: isMenuOpen ? 0 : -width * 0.75,
       top: 0,
@@ -198,7 +204,8 @@ class _HomeState extends State<Home> {
                 ),
                 const Spacer(),
                 IconButton(
-                  onPressed: () => setState(() => isMenuOpen = false),
+                 // onPressed: () => setState(() => isMenuOpen = false),
+                  onPressed: onClose,
                   icon: const Icon(Icons.close, color: Colors.amber),
                 ),
               ],
