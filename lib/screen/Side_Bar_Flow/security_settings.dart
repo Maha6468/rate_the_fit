@@ -71,8 +71,8 @@ class _SecuritySettingsPageState extends State<Security_Settings> {
                     dividerColor: Colors.transparent,
                   ),
                   child: ExpansionTile(
-                    tilePadding: const EdgeInsets.symmetric(horizontal: 16),
-                    childrenPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                    tilePadding: const EdgeInsets.symmetric(horizontal: 7),
+                    childrenPadding: const EdgeInsets.symmetric(horizontal: 5, vertical: 16),
                     collapsedIconColor: Colors.white,
                     iconColor: Colors.white,
                     title: Text(
@@ -84,7 +84,7 @@ class _SecuritySettingsPageState extends State<Security_Settings> {
                     ),
                     children: [
                       activityItem(),
-                      SizedBox(height: 10),
+                      SizedBox(height: 18),
                       activityItem(),
                     ],
                   ),
@@ -142,26 +142,26 @@ class _SecuritySettingsPageState extends State<Security_Settings> {
     );
   }
 
-  /// 🔹 Activity Widget
+
   Widget activityItem() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: const [
         Text(
           "23rd March, 2024",
-          style: TextStyle(color: Colors.white54, fontSize: 13),
+          style: TextStyle(color: Colors.white54, fontSize: 13,fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 4),
+        SizedBox(height: 6),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               "Dhaka, Bangladesh",
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white,fontSize: 15),
             ),
             Text(
               "IP: 012.123.456.789",
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white,fontSize: 15),
             ),
           ],
         ),
