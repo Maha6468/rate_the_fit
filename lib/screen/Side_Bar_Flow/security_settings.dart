@@ -35,7 +35,7 @@ class _SecuritySettingsPageState extends State<Security_Settings> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 30),
+              SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -62,7 +62,7 @@ class _SecuritySettingsPageState extends State<Security_Settings> {
                 ],
               ),
 
-              const SizedBox(height: 25),
+              const SizedBox(height: 20),
               Container(
                 decoration: BoxDecoration(
                   color: const Color(0xFF1A110C),
@@ -122,21 +122,15 @@ class _SecuritySettingsPageState extends State<Security_Settings> {
                           Text_Field(hintText: "Current Password",),
                           SizedBox(height: 5,),
                           Text_Field(hintText: "Current Password",),
+                          SizedBox(height: 5,)
                         ],
                       )
-
-
                     ],
                   ),
                 ),
               ),
 
-
-
-
-
               const Spacer(),
-
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
