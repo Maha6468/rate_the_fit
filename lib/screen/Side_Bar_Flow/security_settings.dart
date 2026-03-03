@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../coustom_widget/TextField.dart';
+
 class Security_Settings extends StatefulWidget {
   const Security_Settings({super.key});
 
@@ -91,50 +93,72 @@ class _SecuritySettingsPageState extends State<Security_Settings> {
                 ),
               ),
               SizedBox(height: 25),
-              // Container(
-              //   padding:
-              //   const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
-              //   decoration: BoxDecoration(
-              //     color: const Color(0xFF1A110C),
-              //     borderRadius: BorderRadius.circular(16),
-              //   ),
-              //   child: Row(
-              //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //     children: const [
-              //       Text(
-              //         "Change Password",
-              //         style: TextStyle(color: Colors.white),
-              //       ),
-              //       Icon(Icons.arrow_forward_ios,
-              //           size: 16, color: Colors.white),
-              //     ],
-              //   ),
-              // ),
+              Container(
+                decoration: BoxDecoration(
+                  color: const Color(0xFF1A110C),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Theme(
+                  data: Theme.of(context).copyWith(
+                    dividerColor: Colors.transparent,
+                  ),
+                  child: ExpansionTile(
+                    tilePadding: const EdgeInsets.symmetric(horizontal: 7),
+                    childrenPadding: const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
+                    collapsedIconColor: Colors.white,
+                    iconColor: Colors.white,
+                    title: Text(
+                      "Change Password",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    children: [
+                      Column(
+                        children: [
+                          Text_Field(hintText: "Current Password",),
+                          SizedBox(height: 5,),
+                          Text_Field(hintText: "Current Password",),
+                          SizedBox(height: 5,),
+                          Text_Field(hintText: "Current Password",),
+                        ],
+                      )
+
+
+                    ],
+                  ),
+                ),
+              ),
+
+
+
+
 
               const Spacer(),
 
-              // SizedBox(
-              //   width: double.infinity,
-              //   child: ElevatedButton(
-              //     style: ElevatedButton.styleFrom(
-              //       backgroundColor: Colors.red,
-              //       padding: const EdgeInsets.symmetric(vertical: 16),
-              //       shape: RoundedRectangleBorder(
-              //         borderRadius: BorderRadius.circular(14),
-              //       ),
-              //     ),
-              //     onPressed: () {},
-              //     child: const Text(
-              //       "Delete Your Account",
-              //       style: TextStyle(
-              //         color: Colors.white,
-              //         fontWeight: FontWeight.w600,
-              //       ),
-              //     ),
-              //   ),
-              // ),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: const Text(
+                    "Delete Your Account",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
             ],
           ),
         ),
