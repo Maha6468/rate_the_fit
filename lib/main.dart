@@ -45,7 +45,8 @@ class MyApp extends StatelessWidget {
       //home: Notification_Settings(),
       //home: Notifications(),
       //home: Preferences_2(),
-      home: Privacy_Settings(),
+      //home: Privacy_Settings(),
+      home:PrivacySettingsPage(),
     );
   }
 }
