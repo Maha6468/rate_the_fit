@@ -61,90 +61,78 @@ class _SecuritySettingsPageState extends State<Security_Settings> {
               ),
 
               const SizedBox(height: 25),
-
-              /// 📋 Recent Log In Activity Card
               Container(
-                padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   color: const Color(0xFF1A110C),
                   borderRadius: BorderRadius.circular(16),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          "Recent Log In Activity",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        Icon(Icons.keyboard_arrow_down,
-                            color: Colors.white),
-                      ],
+                child: Theme(
+                  data: Theme.of(context).copyWith(
+                    dividerColor: Colors.transparent,
+                  ),
+                  child: ExpansionTile(
+                    tilePadding: const EdgeInsets.symmetric(horizontal: 16),
+                    childrenPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                    collapsedIconColor: Colors.white,
+                    iconColor: Colors.white,
+                    title: Text(
+                      "Recent Log In Activity",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
-                    const SizedBox(height: 15),
-
-                    /// Activity Item 1
-                    activityItem(),
-
-                    const SizedBox(height: 10),
-
-                    /// Activity Item 2
-                    activityItem(),
-                  ],
+                    children: [
+                      activityItem(),
+                      SizedBox(height: 10),
+                      activityItem(),
+                    ],
+                  ),
                 ),
               ),
-
-              const SizedBox(height: 25),
-
-              /// 🔑 Change Password
-              Container(
-                padding:
-                const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
-                decoration: BoxDecoration(
-                  color: const Color(0xFF1A110C),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text(
-                      "Change Password",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    Icon(Icons.arrow_forward_ios,
-                        size: 16, color: Colors.white),
-                  ],
-                ),
-              ),
+              SizedBox(height: 25),
+              // Container(
+              //   padding:
+              //   const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
+              //   decoration: BoxDecoration(
+              //     color: const Color(0xFF1A110C),
+              //     borderRadius: BorderRadius.circular(16),
+              //   ),
+              //   child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //     children: const [
+              //       Text(
+              //         "Change Password",
+              //         style: TextStyle(color: Colors.white),
+              //       ),
+              //       Icon(Icons.arrow_forward_ios,
+              //           size: 16, color: Colors.white),
+              //     ],
+              //   ),
+              // ),
 
               const Spacer(),
 
-              /// ❌ Delete Account Button
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: const Text(
-                    "Delete Your Account",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-              ),
+              // SizedBox(
+              //   width: double.infinity,
+              //   child: ElevatedButton(
+              //     style: ElevatedButton.styleFrom(
+              //       backgroundColor: Colors.red,
+              //       padding: const EdgeInsets.symmetric(vertical: 16),
+              //       shape: RoundedRectangleBorder(
+              //         borderRadius: BorderRadius.circular(14),
+              //       ),
+              //     ),
+              //     onPressed: () {},
+              //     child: const Text(
+              //       "Delete Your Account",
+              //       style: TextStyle(
+              //         color: Colors.white,
+              //         fontWeight: FontWeight.w600,
+              //       ),
+              //     ),
+              //   ),
+              // ),
 
               const SizedBox(height: 20),
             ],
