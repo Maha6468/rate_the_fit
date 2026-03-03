@@ -61,7 +61,6 @@ class _PrivacySettingsPageState extends State<PrivacySettingsPage> {
               ),
             ),
 
-            /// Third Party Data Sharing
             ListTile(
               title: const Text(
                 "Third Party Data Sharing",
