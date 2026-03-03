@@ -5,6 +5,7 @@ import 'package:rate_the_fit/screen/Side_Bar_Flow/notification.dart';
 import 'package:rate_the_fit/screen/Side_Bar_Flow/notification_settings.dart';
 import 'package:rate_the_fit/screen/Side_Bar_Flow/preferences_2.dart';
 import 'package:rate_the_fit/screen/Side_Bar_Flow/privacy_settings.dart';
+import 'package:rate_the_fit/screen/Side_Bar_Flow/security_settings.dart';
 import 'package:rate_the_fit/screen/message_flow/chat_inner.dart';
 import 'package:rate_the_fit/screen/home_flow/home.dart';
 import 'package:rate_the_fit/splash_screen.dart';
@@ -45,8 +46,9 @@ class MyApp extends StatelessWidget {
       //home: Notification_Settings(),
       //home: Notifications(),
       //home: Preferences_2(),
-      home: Privacy_Settings(),
+      //home: Privacy_Settings(),
       //home:PrivacySettingsPage(),
+      home: Security_Settings(),
     );
   }
 }
