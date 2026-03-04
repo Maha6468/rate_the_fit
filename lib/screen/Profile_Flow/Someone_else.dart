@@ -178,15 +178,21 @@ Widget _categorySection() {
 
 Widget _gridSection() {
   List<String> profileImages = [
-    "assets/profile_flow_pic/image.png",
+    "assets/profile_flow_pic/max-titov-Mhktr6dFD3I-unsplash 8.png",
     "assets/profile_flow_pic/image (1).png",
+    "assets/profile_flow_pic/image.png",
+
     "assets/profile_flow_pic/max-titov-Mhktr6dFD3I-unsplash 1.png",
     "assets/profile_flow_pic/max-titov-Mhktr6dFD3I-unsplash 2.png",
-    "assets/profile_flow_pic/max-titov-Mhktr6dFD3I-unsplash 3.png",
+    "assets/profile_flow_pic/max-titov-Mhktr6dFD3I-unsplash 7.png",
     "assets/profile_flow_pic/max-titov-Mhktr6dFD3I-unsplash 4.png",
     "assets/profile_flow_pic/max-titov-Mhktr6dFD3I-unsplash 6.png",
-    "assets/profile_flow_pic/max-titov-Mhktr6dFD3I-unsplash 7.png",
-    "assets/profile_flow_pic/max-titov-Mhktr6dFD3I-unsplash 8.png",
+
+
+
+    "assets/profile_flow_pic/max-titov-Mhktr6dFD3I-unsplash 3.png",
+
+
 
   ];
 
