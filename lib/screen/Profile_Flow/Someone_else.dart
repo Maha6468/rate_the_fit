@@ -62,7 +62,7 @@ Widget _headerSection() {
               shape: BoxShape.circle,
               image: DecorationImage(
                 image: AssetImage("assets/images/Ellipse 209.png"),
-                fit: BoxFit.cover, // এটা গুরুত্বপূর্ণ
+                fit: BoxFit.cover,
               ),
             ),
           ),
