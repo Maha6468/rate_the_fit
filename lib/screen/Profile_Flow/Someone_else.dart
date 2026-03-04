@@ -163,7 +163,7 @@ Widget _categorySection() {
           padding: const EdgeInsets.symmetric(horizontal: 15),
           decoration: BoxDecoration(
             border: Border.all(color: Colors.grey),
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(15),
           ),
           child: Center(
             child: Text(categories[index],
