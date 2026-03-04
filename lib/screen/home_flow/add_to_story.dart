@@ -15,25 +15,20 @@ class Add_To_Story extends StatelessWidget {
               Row(
                 children: [
                   Icon(Icons.close, color: Colors.white),
-                  SizedBox(width: 10),
-                  Text(
-                    "Add to Story",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
+                  SizedBox(width: 20),
+                  Text("Add to Story", style: TextStyle(
+                    color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
                   )
                 ],
               ),
-
-              SizedBox(height: 30),
-
-              /// Camera Box
+              SizedBox(height: 40),
               buildGradientBox(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Icon(Icons.camera_alt, color: Colors.white),
                     SizedBox(height: 8),
                     Text(
@@ -43,18 +38,16 @@ class Add_To_Story extends StatelessWidget {
                   ],
                 ),
                 height: 120,
+
               ),
-
-              SizedBox(height: 20),
-
-              /// Upload Row
+              SizedBox(height: 30),
               Row(
                 children: [
                   Expanded(
                     child: buildGradientBox(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
+                        children:  [
                           Icon(Icons.photo, color: Colors.white),
                           SizedBox(height: 8),
                           Text(
@@ -85,10 +78,7 @@ class Add_To_Story extends StatelessWidget {
                   ),
                 ],
               ),
-
-              SizedBox(height: 30),
-
-              /// Text Field
+              SizedBox(height: 40),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 15),
                 decoration: BoxDecoration(
@@ -96,7 +86,7 @@ class Add_To_Story extends StatelessWidget {
                   border: Border.all(color: Colors.grey),
                 ),
                 child: TextField(
-                  maxLines: 4,
+                  maxLines: 7,
                   style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                     hintText: "What's on your mind?",
@@ -105,10 +95,7 @@ class Add_To_Story extends StatelessWidget {
                   ),
                 ),
               ),
-
               Spacer(),
-
-              /// Post Button
               SizedBox(
                 width: double.infinity,
                 height: 55,
@@ -122,7 +109,7 @@ class Add_To_Story extends StatelessWidget {
                   onPressed: () {},
                   child: Text(
                     "Post",
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 18,color: Colors.white),
                   ),
                 ),
               ),
@@ -133,13 +120,13 @@ class Add_To_Story extends StatelessWidget {
     );
   }
 
-  /// Gradient Container Widget
   Widget buildGradientBox({
     required Widget child,
     required double height,
   }) {
     return Container(
       height: height,
+      width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         gradient: LinearGradient(
