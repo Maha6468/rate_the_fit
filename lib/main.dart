@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rate_the_fit/practice.dart';
+import 'package:rate_the_fit/screen/Profile_Flow/Someone_else.dart';
 import 'package:rate_the_fit/screen/Side_Bar_Flow/account_settings.dart';
 import 'package:rate_the_fit/screen/Side_Bar_Flow/faq.dart';
 import 'package:rate_the_fit/screen/Side_Bar_Flow/notification.dart';
@@ -52,7 +53,8 @@ class MyApp extends StatelessWidget {
       //home:PrivacySettingsPage(),
       //home: Security_Settings(),
       //home: Faq_Screen(),
-      home: PrivacyPolicyScreen(),
+      //home: PrivacyPolicyScreen(),
+      home: ProfileScreen(),
     );
   }
 }
