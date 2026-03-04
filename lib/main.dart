@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rate_the_fit/practice.dart';
 import 'package:rate_the_fit/screen/Side_Bar_Flow/account_settings.dart';
+import 'package:rate_the_fit/screen/Side_Bar_Flow/faq.dart';
 import 'package:rate_the_fit/screen/Side_Bar_Flow/notification.dart';
 import 'package:rate_the_fit/screen/Side_Bar_Flow/notification_settings.dart';
 import 'package:rate_the_fit/screen/Side_Bar_Flow/preferences_2.dart';
@@ -48,7 +49,8 @@ class MyApp extends StatelessWidget {
       //home: Preferences_2(),
       //home: Privacy_Settings(),
       //home:PrivacySettingsPage(),
-      home: Security_Settings(),
+      //home: Security_Settings(),
+      home: Faq_Screen(),
     );
   }
 }
