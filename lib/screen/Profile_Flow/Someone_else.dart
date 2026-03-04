@@ -75,7 +75,7 @@ Widget _headerSection() {
 
 Widget _profileInfo() {
   return Padding(
-    padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
+    padding: const EdgeInsets.only(top: 18, left: 20, right: 20),
     child: Column(
       children: [
         Row(
