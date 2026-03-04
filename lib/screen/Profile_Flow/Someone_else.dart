@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -7,7 +8,8 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       //backgroundColor: const Color(0xFF120A06),
-      backgroundColor: Colors.transparent,
+      //backgroundColor: Colors.transparent,
+      backgroundColor: const Color(0xFF120A06),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -20,7 +22,74 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: _bottomNav(),
+
+
+      // extendBody: true,
+      // bottomNavigationBar: CurvedNavigationBar(
+      //   backgroundColor: Colors.transparent,
+      //
+      //   color: Colors.brown.shade800,
+      //   //color: Colors.transparent,
+      //   buttonBackgroundColor: Colors.amber,
+      //   //height: 60,
+      //   animationDuration: const Duration(milliseconds: 300),
+      //   items: const <Widget>[
+      //     Icon(Icons.home, size: 30, color: Colors.white),
+      //     Icon(Icons.star, size: 30, color: Colors.white),
+      //     Icon(Icons.add, size: 30, color: Colors.white),
+      //     Icon(Icons.message, size: 30, color: Colors.white),
+      //     Icon(Icons.person, size: 30, color: Colors.white),
+      //   ],
+      //
+      //   onTap: (index) {
+      //     // if (index == 4) {
+      //     //   setState(() => isMenuOpen = true);
+      //     // } else {
+      //     //   setState(() => _page = index);
+      //     // }
+      //   },
+      //
+      // ),
+
+
+      // floatingActionButton: SizedBox(
+      //   width: 70,height: 70,
+      //   child: FloatingActionButton(
+      //     onPressed: () {},
+      //     child: const Icon(Icons.add,size: 35,color: Colors.white,),
+      //     backgroundColor: Colors.grey.shade800,
+      //     shape: CircleBorder(),
+      //   ),
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // bottomNavigationBar: BottomAppBar(
+      //   color: Colors.grey.shade800,
+      //   //color: Colors.amberAccent,
+      //   shape: CircularNotchedRectangle(
+      //
+      //   ),
+      //   notchMargin: 6,
+      //   elevation: 10,
+      //   child: SizedBox(
+      //     height: 60,
+      //     child: Row(
+      //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //       children: const [
+      //         Icon(Icons.home, color: Colors.white,size: 30,),
+      //         Icon(Icons.star, color: Colors.white,size: 30,),
+      //         SizedBox(width: 48),
+      //         Icon(Icons.chat_bubble, color: Colors.white,size: 30,),
+      //         Icon(Icons.person, color: Colors.white,size: 30,),
+      //       ],
+      //     ),
+      //   ),
+      // ),
+
+
+
+
+
+
     );
   }
 }
@@ -56,8 +125,8 @@ Widget _headerSection() {
         right: 0,
         child: Center(
           child: Container(
-            height: 90,
-            width: 90,
+            height: 100,
+            width: 100,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
@@ -220,17 +289,3 @@ Widget _gridSection() {
   );
 }
 
-Widget _bottomNav() {
-  return BottomNavigationBar(
-    backgroundColor: const Color(0xFF0E0704),
-    selectedItemColor: Colors.white,
-    unselectedItemColor: Colors.grey,
-    items: const [
-      BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
-      BottomNavigationBarItem(icon: Icon(Icons.star_border), label: ""),
-      BottomNavigationBarItem(icon: Icon(Icons.add_circle_outline), label: ""),
-      BottomNavigationBarItem(icon: Icon(Icons.chat_bubble_outline), label: ""),
-      BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
-    ],
-  );
-}
