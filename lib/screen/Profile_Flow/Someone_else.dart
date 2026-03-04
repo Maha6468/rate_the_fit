@@ -83,8 +83,7 @@ Widget _profileInfo() {
           children: const [
             Column(
               children: [
-                Text("29k",
-                    style: TextStyle(
+                Text("29k",style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
                         fontWeight: FontWeight.bold)),
@@ -104,10 +103,9 @@ Widget _profileInfo() {
           ],
         ),
         const SizedBox(height: 15),
-        const Align(
+        Align(
           alignment: Alignment.centerLeft,
-          child: Text("Cameron Williamson",
-              style: TextStyle(
+          child: Text("Cameron Williamson",style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w600)),
@@ -153,7 +151,6 @@ Widget _profileInfo() {
 
 Widget _categorySection() {
   List<String> categories = ["All (233)", "Red (20)", "Casual (20)", "Blue (20)"];
-
   return Container(
     height: 60,
     padding: const EdgeInsets.symmetric(vertical: 10),
