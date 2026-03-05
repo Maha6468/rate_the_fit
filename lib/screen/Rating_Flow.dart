@@ -51,7 +51,8 @@ class Rating_Home_1 extends StatelessWidget {
               child: Container(
                 width: double.infinity,
                 height: double.infinity,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
                   image: DecorationImage(
                     image: AssetImage(
                       "assets/rating_image/max-titov-Mhktr6dFD3I-unsplash 1 (1).png",
