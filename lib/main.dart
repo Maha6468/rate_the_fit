@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rate_the_fit/practice.dart';
 import 'package:rate_the_fit/screen/Profile_Flow/Someone_else.dart';
-import 'package:rate_the_fit/screen/Rating_Flow.dart';
+import 'package:rate_the_fit/screen/rating_flow/Rating_Flow_1.dart';
 import 'package:rate_the_fit/screen/Side_Bar_Flow/account_settings.dart';
 import 'package:rate_the_fit/screen/Side_Bar_Flow/faq.dart';
 import 'package:rate_the_fit/screen/Side_Bar_Flow/notification.dart';
@@ -13,6 +13,7 @@ import 'package:rate_the_fit/screen/Side_Bar_Flow/security_settings.dart';
 import 'package:rate_the_fit/screen/home_flow/add_to_story.dart';
 import 'package:rate_the_fit/screen/message_flow/chat_inner.dart';
 import 'package:rate_the_fit/screen/home_flow/home.dart';
+import 'package:rate_the_fit/screen/rating_flow/Rating_Flow_2.dart';
 import 'package:rate_the_fit/splash_screen.dart';
 
 import 'screen/Create_Post_Flow/create_post.dart';
@@ -58,7 +59,8 @@ class MyApp extends StatelessWidget {
       //home: PrivacyPolicyScreen(),
      // home: ProfileScreen(),
         //home: Add_To_Story(),
-        home: Rating_Home_1(),
+       // home: Rating_Home_1(),
+      home: Rating_Home_2(),
     );
   }
 }
