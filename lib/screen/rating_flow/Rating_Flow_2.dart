@@ -165,8 +165,6 @@ class Rating_Home_2 extends StatelessWidget {
                 ],
               ),
             ),
-
-            /// Bottom Navigation
           ],
         ),
       ),
