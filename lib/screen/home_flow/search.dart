@@ -46,7 +46,7 @@ class  Search_1 extends StatelessWidget {
 
       body: Column(
         children: [
-
+          SizedBox(height: 20,),
           SizedBox(
             height: 50,
             child: ListView.builder(
@@ -54,7 +54,7 @@ class  Search_1 extends StatelessWidget {
               itemCount: categories.length,
               itemBuilder: (context,index){
                 return Container(
-                  margin: const EdgeInsets.symmetric(horizontal:8),
+                  margin: const EdgeInsets.symmetric(horizontal:5),
                   padding: const EdgeInsets.symmetric(horizontal:15),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
@@ -70,16 +70,16 @@ class  Search_1 extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(height: 10),
+          const SizedBox(height: 30),
 
           Expanded(
             child: GridView.builder(
               itemCount: images.length,
               gridDelegate:
               const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                mainAxisSpacing: 6,
-                crossAxisSpacing: 6,
+                crossAxisCount: 2,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10,
               ),
               itemBuilder: (context,index){
                 return ClipRRect(
@@ -95,16 +95,12 @@ class  Search_1 extends StatelessWidget {
         ],
       ),
 
-      /// FLOATING +
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.grey,
         child: const Icon(Icons.add),
         onPressed: () {},
       ),
-
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-
-      /// BOTTOM NAVBAR
       bottomNavigationBar: BottomAppBar(
         color: Colors.black,
         shape: const CircularNotchedRectangle(),
