@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class Rating_Home_1 extends StatelessWidget {
   const Rating_Home_1({super.key});
