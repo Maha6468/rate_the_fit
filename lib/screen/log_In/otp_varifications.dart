@@ -20,7 +20,6 @@ class _OTP_VarificationState extends State<OTP_Varification> {
 
   @override
   Widget build(BuildContext context) {
-
     final defaultPinTheme = PinTheme(
       width: 90,
       height: 60,
@@ -36,23 +35,16 @@ class _OTP_VarificationState extends State<OTP_Varification> {
       ),
     );
 
-
     return Scaffold(
       body: Container(
-        height: MediaQuery
-            .of(context)
-            .size
-            .height,
-        width: MediaQuery
-            .of(context)
-            .size
-            .width,
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Colors.black, Color(0xFF3B2F2F)],
-                begin: Alignment.bottomLeft,
-                end: Alignment.topRight
-            )
+          gradient: LinearGradient(
+            colors: [Colors.black, Color(0xFF3B2F2F)],
+            begin: Alignment.bottomLeft,
+            end: Alignment.topRight,
+          ),
         ),
         child: SafeArea(
           child: SingleChildScrollView(
@@ -62,17 +54,28 @@ class _OTP_VarificationState extends State<OTP_Varification> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Custom_Star_Image(alignment: Alignment.topRight,),
-                  SizedBox(height: 50,),
-                  Text("OTP \nVerification", style: TextStyle(color: Colors.white,
+                  Custom_Star_Image(alignment: Alignment.topRight),
+                  SizedBox(height: 50),
+                  Text(
+                    "OTP \nVerification",
+                    style: TextStyle(
+                      color: Colors.white,
                       fontSize: 30,
-                      fontWeight: FontWeight.bold),),
-                  Text("Enter the code from the sms we sent to",
-                    style: TextStyle(color: Colors.grey),),
-                  Text("+12345667890", style: TextStyle(
-                      color: Colors.grey.shade50, fontWeight: FontWeight.w500),),
-                  SizedBox(height: 20,),
-
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    "Enter the code from the sms we sent to",
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  Text(
+                    "+12345667890",
+                    style: TextStyle(
+                      color: Colors.grey.shade50,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  SizedBox(height: 20),
 
                   Center(
                     child: Pinput(
@@ -86,39 +89,40 @@ class _OTP_VarificationState extends State<OTP_Varification> {
                     ),
                   ),
 
-
-
-                  SizedBox(height: 17,),
+                  SizedBox(height: 17),
 
                   Center(
-                      child: Text_Rich(
-                        firstText: "Don't receive the OTP? ",
-                        lastText: ' Resend',
-                        firstColor:Colors.grey,
-                        lastColor: Colors.white,
-                        onTap: () {  },
-
-                      )
+                    child: Text_Rich(
+                      firstText: "Don't receive the OTP? ",
+                      lastText: ' Resend',
+                      firstColor: Colors.grey,
+                      lastColor: Colors.white,
+                      onTap: () {},
+                    ),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: 20),
 
-                  Center(child: Custom_Elevated_Button(
-                    text: 'Submit', height: 60, width: 300,
-                    backgroundColor: Color(0xFF261C12),
-                    circular_value: 10,
-                    onPressed: () {
+                  Center(
+                    child: Custom_Elevated_Button(
+                      text: 'Submit',
+                      height: 60,
+                      width: 300,
+                      backgroundColor: Color(0xFF261C12),
+                      circular_value: 10,
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (context) => Congratulations(),
+                        );
 
-                      showDialog(context: context, barrierDismissible: true, builder: (context) => Congratulations(),);
-
-                      Future.delayed(Duration(seconds: 20), () {
-                        Navigator.of(context).pop();
-                        Navigator.pushReplacementNamed(context, '/home');
-                      });
-
-
-                    }, ))
-
-
+                        Future.delayed(Duration(seconds: 20), () {
+                          Navigator.of(context).pop();
+                          Navigator.pushReplacementNamed(context, '/home');
+                        });
+                      },
+                    ),
+                  ),
                 ],
               ),
             ),
