@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../../coustom_widget/TextField.dart';
 
-class Security_Settings extends StatefulWidget {
-  const Security_Settings({super.key});
+class Security_Settings_2 extends StatefulWidget {
+  const Security_Settings_2({super.key});
 
   @override
-  State<Security_Settings> createState() => _SecuritySettingsPageState();
+  State<Security_Settings_2> createState() => _SecuritySettingsPageState();
 }
 
-class _SecuritySettingsPageState extends State<Security_Settings> {
+class _SecuritySettingsPageState extends State<Security_Settings_2> {
   bool is2FAEnabled = true;
 
   @override
