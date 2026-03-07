@@ -13,7 +13,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  bool isMenuOpen=false;
+  bool isMenuOpen = false;
   int _page = 0;
   final List<String> userImage = [
     "assets/images/firad.JPG",
@@ -32,109 +32,112 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        // leading: Padding(
-        //   padding: const EdgeInsets.all(8.0),
-        //   child: Custom_Star_Image(alignment: Alignment.topLeft),
-        // ),
         leading: isMenuOpen
             ? null
             : Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Custom_Star_Image(alignment: Alignment.topLeft),
-        ),
-
+                padding: const EdgeInsets.all(8.0),
+                child: Custom_Star_Image(alignment: Alignment.topLeft),
+              ),
 
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(
+                  context,'/search_1');
+            },
             icon: Icon(Icons.search, size: 45, color: Colors.grey),
           ),
         ],
       ),
       body: Stack(
-         children: [
-         Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.black, Color(0xFF3B2F2F)],
-              begin: Alignment.bottomLeft,
-              end: Alignment.topRight,
+        children: [
+          Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.black, Color(0xFF3B2F2F)],
+                begin: Alignment.bottomLeft,
+                end: Alignment.topRight,
+              ),
             ),
-          ),
-          child: SafeArea(
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 16),
-                  SizedBox(
-                    height: width * 0.25,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      itemCount: userImage.length + 1,
-                      itemBuilder: (context, index) {
-                        if (index == 0) {
-                          return Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                            child: Column(
-                              children: [
-                                CircleAvatar(
-                                  radius: 30,
-                                  backgroundColor: Colors.transparent,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: Colors.white,
-                                        width: .8,
+            child: SafeArea(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 16),
+                    SizedBox(
+                      height: width * 0.25,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        itemCount: userImage.length + 1,
+                        itemBuilder: (context, index) {
+                          if (index == 0) {
+                            return Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 5.0,
+                              ),
+                              child: Column(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 30,
+                                    backgroundColor: Colors.transparent,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: Colors.white,
+                                          width: .8,
+                                        ),
+                                        shape: BoxShape.circle,
                                       ),
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: IconButton(
-                                      onPressed: () {
-                                        print("maha");
-                                      },
-                                      icon: Icon(Icons.add, color: Colors.white),
+                                      child: IconButton(
+                                        onPressed: () {
+                                          print("maha");
+                                          Navigator.pushNamed(
+                                              context,'/addStory');
+                                        },
+                                        icon: Icon(
+                                          Icons.add,
+                                          color: Colors.white,
+                                        ),
+                                      ),
                                     ),
                                   ),
-                                ),
-                                Text(
-                                  "Add Story",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ],
-                            ),
-                          );
-                        } else {
-                          return buildStory(
-                            userImage[index - 1],
-                            userNames[index - 1],
-                          );
-                        }
-                      },
+                                  Text(
+                                    "Add Story",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            );
+                          } else {
+                            return buildStory(
+                              userImage[index - 1],
+                              userNames[index - 1],
+                            );
+                          }
+                        },
+                      ),
                     ),
-                  ),
 
-                  SizedBox(height: 10),
-                  buildPostCard(context),
-                  buildPostCard(context),
-                ],
+                    SizedBox(height: 10),
+                    buildPostCard(context),
+                    buildPostCard(context),
+                  ],
+                ),
               ),
             ),
           ),
-        ),
 
-
-          if (isMenuOpen)
-            _buildOverlay(),
+          if (isMenuOpen) _buildOverlay(),
           //_buildSideMenu(),
           _buildSideMenu(() {
             setState(() => isMenuOpen = false);
           }),
           //CustomDrawer()
-        ]
+        ],
       ),
 
       extendBody: true,
@@ -159,12 +162,9 @@ class _HomeState extends State<Home> {
             setState(() => _page = index);
           }
         },
-
       ),
     );
   }
-
-
 
   Widget _buildOverlay() {
     return GestureDetector(
@@ -172,7 +172,6 @@ class _HomeState extends State<Home> {
       child: Container(color: Colors.red.withOpacity(0.5)),
     );
   }
-
 
   Widget _buildSideMenu(VoidCallback onClose) {
     final width = MediaQuery.of(context).size.width;
@@ -204,7 +203,7 @@ class _HomeState extends State<Home> {
                 ),
                 const Spacer(),
                 IconButton(
-                 // onPressed: () => setState(() => isMenuOpen = false),
+                  // onPressed: () => setState(() => isMenuOpen = false),
                   onPressed: onClose,
                   icon: const Icon(Icons.close, color: Colors.amber),
                 ),
@@ -214,8 +213,11 @@ class _HomeState extends State<Home> {
             SizedBox(height: 10),
 
             _menuItem(Icons.person_outline, "Account Settings"),
-            _menuItem(Icons.notifications_none, "Notification",
-                showBadge: true),
+            _menuItem(
+              Icons.notifications_none,
+              "Notification",
+              showBadge: true,
+            ),
             _menuItem(Icons.search, "Notification Settings"),
             _menuItem(Icons.tune, "Preferences"),
             _menuItem(Icons.shield_outlined, "Privacy Settings"),
@@ -230,7 +232,6 @@ class _HomeState extends State<Home> {
     );
   }
 
-
   Widget buildStory(String imgPath, String name) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -242,8 +243,6 @@ class _HomeState extends State<Home> {
       ),
     );
   }
-
-
 }
 
 Widget buildPostCard(BuildContext context) {
@@ -434,7 +433,6 @@ Widget buildPostCard(BuildContext context) {
   );
 }
 
-
 Widget _menuItem(IconData icon, String title, {bool showBadge = false}) {
   return ListTile(
     leading: Icon(icon, color: Colors.white70),
@@ -453,7 +451,7 @@ Widget _menuItem(IconData icon, String title, {bool showBadge = false}) {
               "1",
               style: TextStyle(fontSize: 10, color: Colors.white),
             ),
-          )
+          ),
       ],
     ),
     onTap: () {},
