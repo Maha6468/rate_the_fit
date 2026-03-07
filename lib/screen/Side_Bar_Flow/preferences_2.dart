@@ -44,7 +44,7 @@ class _Preferences_2State extends State<Preferences_2> {
           onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
-          "Notifications",
+          "Preferences",
           style: TextStyle(color: Colors.white),
         ),
       ),
