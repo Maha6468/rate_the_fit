@@ -21,11 +21,10 @@ class _Custom_CongratulationsState extends State<Congratulations>
       duration: Duration(seconds: 3),
     )..repeat();
 
-    Future.delayed(Duration(seconds: 5), () {
+    Future.delayed(Duration(seconds: 3), () {
       if (mounted) {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => Home()),
+        Navigator.pushNamed(
+          context,'/home'
         );
       }
     });
