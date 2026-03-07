@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Privacy_Settings extends StatefulWidget {
-  const Privacy_Settings({super.key});
+class Privacy_Settings_2 extends StatefulWidget {
+  const Privacy_Settings_2({super.key});
 
   @override
-  State<Privacy_Settings> createState() => _Privacy_SettingsState();
+  State<Privacy_Settings_2> createState() => _Privacy_SettingsState();
 }
 
-class _Privacy_SettingsState extends State<Privacy_Settings> {
+class _Privacy_SettingsState extends State<Privacy_Settings_2> {
 
   bool isNotificationEnabled = true;
 
