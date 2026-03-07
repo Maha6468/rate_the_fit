@@ -47,6 +47,6 @@ class AppRoutes {
     "/addStory": (context) => Add_To_Story(),
     "/rating1": (context) => Rating_Home_1(),
     "/rating2": (context) => Rating_Home_2(),
-    "/search": (context) => Search_1(),
+    "/search_1": (context) => Search_1(),
   };
 }
