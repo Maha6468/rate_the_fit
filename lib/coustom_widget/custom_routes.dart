@@ -15,19 +15,19 @@ import '../screen/Sign_Up/Sign_up.dart';
 import '../screen/home_flow/add_to_story.dart';
 import '../screen/home_flow/home.dart';
 import '../screen/home_flow/search.dart';
+import '../screen/log_In/Login.dart';
+import '../screen/log_In/otp_varifications.dart';
 import '../screen/message_flow/Chat_1.dart';
 import '../screen/message_flow/chat_2.dart';
 import '../screen/message_flow/chat_inner.dart';
 import '../screen/rating_flow/Rating_Flow_1.dart';
 import '../screen/rating_flow/Rating_Flow_2.dart';
 
-
-
 class AppRoutes {
-
   static Map<String, WidgetBuilder> routes = {
-
     "/": (context) => Splash_Screen(),
+    "/login": (context)=> Login(),
+    "/otp":(context)=>OTP_Varification(),
     "/home": (context) => Home(),
     "/signup": (context) => Sign_Up(),
     "/createPost": (context) => Create_Post(),
