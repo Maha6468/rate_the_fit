@@ -60,7 +60,7 @@ class Sign_Up extends StatelessWidget {
                     backgroundColor: Color(0xFF261C12),
                     circular_value:10,
                     onPressed: () {
-                      Navigator.push(context,MaterialPageRoute(builder: (Context)=>OTP_Varification()));
+                      Navigator.pushNamed(context,"/otp");
                     }, )),
                   SizedBox(height: 30),
                   Row(
@@ -74,7 +74,7 @@ class Sign_Up extends StatelessWidget {
                       Custom_Or_Right(),
                     ],
                   ),
-                  SizedBox(height: 35,),
+                  SizedBox(height: 25,),
                   Row(
                     children: [
                       Expanded(
@@ -127,7 +127,7 @@ class Sign_Up extends StatelessWidget {
                     ],
                   ),
 
-                  SizedBox(height: 30,),
+                  SizedBox(height: 20,),
                   Center(
                     child: Text_Rich(
                         firstText: "Already have an account? ",
@@ -135,9 +135,8 @@ class Sign_Up extends StatelessWidget {
                         firstColor: Colors.grey,
                         lastColor: Colors.white,
                         onTap: (){
-                          Navigator.push(
-                              context, MaterialPageRoute(
-                              builder: (Context) =>Login()));
+                          Navigator.pushNamed(
+                              context,"/login");
                         }
                     ),
                   ),
@@ -200,36 +199,3 @@ class Custom_Or_Right extends StatelessWidget {
     );
   }
 }
-
-// class Row_TextField extends StatelessWidget {
-//   final String hintText;
-//   const Row_TextField({super.key, required this.hintText});
-//   @override
-//   Widget build(BuildContext context) {
-//     return  SizedBox(
-//       height: 55,
-//       child: TextField(
-//         style: TextStyle(color: Colors.grey),
-//         decoration: InputDecoration(
-//             hintText: hintText,
-//             hintStyle: GoogleFonts.poppins(color: Color(0xFFB2B2B2).withOpacity(0.17),fontSize: 15),
-//             filled: true,
-//             fillColor: Colors.black54,
-//
-//             enabledBorder: OutlineInputBorder(
-//               borderSide: BorderSide(
-//                   color:Color(0xFFFFFFFF).withOpacity(0.17), width: .5), // normally color
-//               borderRadius: BorderRadius.circular(12),
-//             ),
-//
-//             border: OutlineInputBorder(
-//
-//                 borderRadius: BorderRadius.circular(8),
-//                 borderSide: BorderSide.none,
-//             )
-//
-//         ),
-//       ),
-//     );
-//   }
-// }
