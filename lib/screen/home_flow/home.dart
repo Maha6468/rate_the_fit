@@ -157,17 +157,20 @@ class _HomeState extends State<Home> {
           Icon(Icons.person, size: 30, color: Colors.white),
         ],
 
-        // onTap: (index) {
-        //   if (index == 4) {
-        //     setState(() => isMenuOpen = true);
-        //   } else {
-        //     setState(() => _page = index);
-        //   }
-        // },
         onTap: (index) {
           if (index == 1) {
             Navigator.pushNamed(
               context, "/ratingflowscreen"
+            );
+          }
+          else if(index==2){
+            Navigator.pushNamed(
+                context, "/createPost"
+            );
+          }
+          else if(index==3){
+            Navigator.pushNamed(
+                context, "/chat1"
             );
           }
           else if (index == 4) {
