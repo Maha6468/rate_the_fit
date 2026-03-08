@@ -7,14 +7,14 @@ class Chat_1 extends StatelessWidget {
 
   final List<Map<String, String>> chats = const [
     {
-      "name": "Brooklyn Simmons",
-      "message": "Where did you get that from?",
-      "image": "https://randomuser.me/api/portraits/women/1.jpg",
-    },
-    {
       "name": "Darrell Steward",
       "message": "Where did you get that from?",
       "image": "https://randomuser.me/api/portraits/men/2.jpg",
+    },
+    {
+      "name": "Brooklyn Simmons",
+      "message": "Where did you get that from?",
+      "image": "https://randomuser.me/api/portraits/women/1.jpg",
     },
     {
       "name": "Courtney Henry",
@@ -78,17 +78,22 @@ class Chat_1 extends StatelessWidget {
                 ),
                 SizedBox(width: 18),
                 Container(
-                  padding: EdgeInsets.all(12),
+                  padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                     color: Color(0x000000),
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(color: Colors.white12),
                   ),
-                  child: const Icon(Icons.filter_list, color: Colors.white),
+                  //child: const Icon(Icons.filter_list, color: Colors.white),
+                  child: IconButton(onPressed: (){
+                    Navigator.pushNamed(
+                        context, "/chat2"
+                    );
+                  }, icon: Icon(Icons.filter_list, color: Colors.white,size: 30,)),
                 ),
               ],
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 30),
             Expanded(
               child: ListView.builder(
                 itemCount: chats.length,
@@ -102,6 +107,13 @@ class Chat_1 extends StatelessWidget {
                     ),
                     margin: EdgeInsets.symmetric(vertical: 10),
                     child: ListTile(
+
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,"/chatInner"
+                        );
+                      },
+
                       contentPadding: EdgeInsets.all(12),
                       leading: CircleAvatar(
                         radius: 28,
