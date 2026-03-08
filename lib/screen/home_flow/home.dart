@@ -19,12 +19,13 @@ class _HomeState extends State<Home> {
   int _page = 0;
   final List<String> userImage = [
     "assets/images/firad.JPG",
+    "assets/images/profile_pic.png",
     "assets/images/ibnul.JPG",
     "assets/images/mariya.jpg",
     "assets/images/nahid.JPG",
     "assets/images/saim.jpg",
   ];
-  final List<String> userNames = ["Firad", "Ibnul", "Mariya", "Nahid", "Saim"];
+  final List<String> userNames = ["Firad","Cameron", "Ibnul", "Mariya", "Nahid", "Saim"];
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +75,7 @@ class _HomeState extends State<Home> {
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         padding: EdgeInsets.symmetric(horizontal: 10),
-                        itemCount: userImage.length + 1,
+                        itemCount: userImage.length +1,
                         itemBuilder: (context, index) {
                           if (index == 0) {
                             return Padding(
@@ -116,8 +117,8 @@ class _HomeState extends State<Home> {
                             );
                           } else {
                             return buildStory(
-                              userImage[index - 1],
-                              userNames[index - 1],
+                              userImage[index -1],
+                              userNames[index -1],
                             );
                           }
                         },
@@ -275,29 +276,38 @@ Widget buildPostCard(BuildContext context) {
         end: Alignment.topRight,
       ),
     ),
-
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ListTile(
           leading: Transform.translate(
             offset: Offset(-1, 0),
-            child: const CircleAvatar(
-              backgroundImage: AssetImage('assets/images/firad.JPG'),
+            child: GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(context,'/someoneElse');
+              },
+              child: const CircleAvatar(
+                backgroundImage: AssetImage("assets/images/profile_pic.png",),
+              ),
             ),
           ),
           title: Transform.translate(
             offset: Offset(-6, 0),
-            child: const Text(
-              "Cameron Williamson",
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 12,
+            child: GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(context,'/someoneElse');
+              },
+              child: const Text(
+                "Cameron Williamson",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.visible,
+                softWrap: false,
               ),
-              maxLines: 1,
-              overflow: TextOverflow.visible,
-              softWrap: false,
             ),
           ),
           subtitle: Transform.translate(
@@ -338,14 +348,14 @@ Widget buildPostCard(BuildContext context) {
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Image.asset(
-                  "assets/images/firad.JPG",
+                  "assets/images/profile_pic.png",
                   fit: BoxFit.cover,
                   width: double.infinity,
-                  height: 250, // চাইলে height adjust করো
+                  height: 250,
                 ),
               ),
 
-              // 🔹 Rating badge (bottom-right)
+              // Rating badge (bottom-right)
               Positioned(
                 bottom: 0,
                 right: 0,
