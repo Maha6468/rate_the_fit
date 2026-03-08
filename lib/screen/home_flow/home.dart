@@ -5,6 +5,8 @@ import 'package:rate_the_fit/screen/Side_Bar_Flow/side_bar.dart';
 import '../../coustom_widget/custom_star_image.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
+import '../rating_flow/Rating_Flow_1.dart';
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -155,13 +157,27 @@ class _HomeState extends State<Home> {
           Icon(Icons.person, size: 30, color: Colors.white),
         ],
 
+        // onTap: (index) {
+        //   if (index == 4) {
+        //     setState(() => isMenuOpen = true);
+        //   } else {
+        //     setState(() => _page = index);
+        //   }
+        // },
         onTap: (index) {
-          if (index == 4) {
+          if (index == 1) {
+            Navigator.pushNamed(
+              context, "/ratingflowscreen"
+            );
+          }
+          else if (index == 4) {
             setState(() => isMenuOpen = true);
-          } else {
+          }
+          else {
             setState(() => _page = index);
           }
         },
+
       ),
     );
   }

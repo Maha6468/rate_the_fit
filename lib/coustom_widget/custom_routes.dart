@@ -22,6 +22,7 @@ import '../screen/message_flow/chat_2.dart';
 import '../screen/message_flow/chat_inner.dart';
 import '../screen/rating_flow/Rating_Flow_1.dart';
 import '../screen/rating_flow/Rating_Flow_2.dart';
+import '../screen/rating_flow/rating_flow_screen.dart';
 
 class AppRoutes {
   static Map<String, WidgetBuilder> routes = {
@@ -47,6 +48,7 @@ class AppRoutes {
     "/addStory": (context) => Add_To_Story(),
     "/rating1": (context) => Rating_Home_1(),
     "/rating2": (context) => Rating_Home_2(),
+    "/ratingflowscreen":(context)=> RatingFlowScreen(),
     "/search_1": (context) => Search_1(),
   };
 }
