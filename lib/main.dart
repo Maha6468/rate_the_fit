@@ -18,10 +18,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      // initialRoute: "/home",
-      // routes: AppRoutes.routes,
-
-      home: SideBar(),
+      initialRoute: "/",
+      routes: AppRoutes.routes,
+      //home: Home(),
+      //home: SideBar(),
     );
   }
 }

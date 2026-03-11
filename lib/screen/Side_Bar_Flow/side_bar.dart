@@ -14,83 +14,46 @@ class _HomePageState extends State<SideBar> {
   bool isMenuOpen = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: scaffoldKey,
-      appBar: AppBar(
-        title: const Text("Home"),
-        automaticallyImplyLeading: false,
-      ),
+    return Drawer(
+          backgroundColor: const Color(0xFF0D0702),
+          child: SafeArea(
+            child: ListView(
+              children:  [
+                SizedBox(height:20),
+                Row(
 
-      drawer: Drawer(
-        backgroundColor: const Color(0xFF0D0702),
-        child: ListView(
-          children:  [
-            Row(
-              children: [
-                const CircleAvatar(
-                  radius: 25,
-                  backgroundColor: Colors.amber,
-                  child: Icon(Icons.star, color: Colors.black),
+                  children: [
+                    Padding(padding: const EdgeInsets.only(left: 15),
+                      child: const CircleAvatar(
+                        radius: 25,
+                        backgroundColor: Colors.amber,
+                        child: Icon(Icons.star, color: Colors.black),
+                      ),
+                    ),
+                    const Spacer(),
+                    IconButton(
+                      onPressed: () => setState(() => isMenuOpen = false),
+                      icon:Icon(Icons.close, color: Colors.amber),
+                    ),
+                  ],
                 ),
-                const Spacer(),
-                IconButton(
-                  onPressed: () => setState(() => isMenuOpen = false),
-                  //onPressed: (){},
-                  icon:Icon(Icons.close, color: Colors.amber),
-                ),
+            
+                _menuItem(Icons.person_outline, "Account Settings"),
+                _menuItem(Icons.notifications_none, "Notification", showBadge: true,),
+                _menuItem(Icons.search, "Notification Settings"),
+                _menuItem(Icons.tune, "Preferences"),
+                _menuItem(Icons.shield_outlined, "Privacy Settings"),
+                _menuItem(Icons.lock_outline, "Security Settings"),
+                _menuItem(Icons.help_outline, "FAQ"),
+                _menuItem(Icons.privacy_tip_outlined, "Privacy Policy"),
+                _menuItem(Icons.description_outlined, "Terms Of Services"),
+                _viewPortSwitch(),
+                SizedBox(height: 10),
+                _logoutButton(),
+            
               ],
             ),
-            // ListTile(
-            //   title: Text("Profile"),
-            // ),
-            // ListTile(
-            //   title: Text("Settings"),
-            // ),
-
-            _menuItem(Icons.person_outline, "Account Settings"),
-            _menuItem(
-              Icons.notifications_none,
-              "Notification",
-              showBadge: true,
-            ),
-            _menuItem(Icons.search, "Notification Settings"),
-            _menuItem(Icons.tune, "Preferences"),
-            _menuItem(Icons.shield_outlined, "Privacy Settings"),
-            _menuItem(Icons.lock_outline, "Security Settings"),
-            _menuItem(Icons.help_outline, "FAQ"),
-            _menuItem(Icons.privacy_tip_outlined, "Privacy Policy"),
-            _menuItem(Icons.description_outlined, "Terms Of Services"),
-
-            Spacer(),
-            _viewPortSwitch(),
-            SizedBox(height: 20),
-            _logoutButton(),
-
-          ],
-        ),
-      ),
-
-      body: const Center(
-        child: Text("Home Screen"),
-      ),
-
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: "Home",
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.menu),
-            label: "Menu",
-          ),
-        ],
-        onTap: (index) {
-          if(index == 1){
-            scaffoldKey.currentState?.openDrawer();
-          }
-        },
-      ),
     );
   }
 
@@ -108,17 +71,13 @@ class _HomePageState extends State<SideBar> {
                 color: Colors.red,
                 shape: BoxShape.circle,
               ),
-              child: const Text(
-                "1",
-                style: TextStyle(fontSize: 10, color: Colors.white),
-              ),
+              child: const Text("1", style: TextStyle(fontSize: 10, color: Colors.white),),
             ),
         ],
       ),
       onTap: () {},
     );
   }
-
 
 
   Widget _logoutButton() {
@@ -149,6 +108,5 @@ class _HomePageState extends State<SideBar> {
       ),
     );
   }
-
 
 }

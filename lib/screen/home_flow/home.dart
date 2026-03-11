@@ -15,6 +15,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+  bool isSwitched = true;
   bool isMenuOpen = false;
   int _page = 0;
   final List<String> userImage = [
@@ -38,6 +40,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
+      key: scaffoldKey,
+      drawer: const SideBar(),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -175,6 +179,10 @@ class _HomeState extends State<Home> {
             Navigator.pushNamed(context, "/chat1");
           } else if (index == 4) {
             setState(() => isMenuOpen = true);
+
+            if(index==4){
+              scaffoldKey.currentState?.openDrawer();
+            }
 
             //Navigator.pushNamed(context, "/sidebar");
 
