@@ -145,13 +145,6 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-
-          // if (isMenuOpen) _buildOverlay(),
-          // _buildSideMenu(() {
-          //   setState(() => isMenuOpen = false);
-          // }),
-
-          //SideBar(),
         ],
       ),
 
@@ -183,123 +176,11 @@ class _HomeState extends State<Home> {
             if(index==4){
               scaffoldKey.currentState?.openDrawer();
             }
-
             //Navigator.pushNamed(context, "/sidebar");
-
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-            //     builder: (context) => SideBar(),
-            //   ),
-            // );
           } else {
             setState(() => _page = index);
           }
         },
-      ),
-    );
-  }
-
-  Widget _buildOverlay() {
-    return GestureDetector(
-      onTap: () => setState(() => isMenuOpen = false),
-      child: Container(color: Colors.transparent.withOpacity(0.5)),
-    );
-  }
-
-  Widget _buildSideMenu(VoidCallback onClose) {
-    final width = MediaQuery.of(context).size.width;
-    return AnimatedPositioned(
-      key: ValueKey(isMenuOpen),
-      duration: const Duration(milliseconds: 300),
-      left: isMenuOpen ? 0 : -width * 0.75,
-      top: 0,
-      bottom: 0,
-      child: Container(
-        width: width * 0.80,
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-        decoration: const BoxDecoration(
-          color: Color(0xFF0D0702),
-          borderRadius: BorderRadius.only(
-            topRight: Radius.circular(25),
-            bottomRight: Radius.circular(25),
-          ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-           // SideBar()
-            Row(
-              children: [
-                const CircleAvatar(
-                  radius: 25,
-                  backgroundColor: Colors.amber,
-                  child: Icon(Icons.star, color: Colors.black),
-                ),
-                const Spacer(),
-                IconButton(
-                  // onPressed: () => setState(() => isMenuOpen = false),
-                  onPressed: onClose,
-                  icon: const Icon(Icons.close, color: Colors.amber),
-                ),
-              ],
-            ),
-
-            SizedBox(height: 10),
-
-            _menuItem(Icons.person_outline, "Account Settings",
-            onTap: (){
-              setState(() => isMenuOpen = false);
-              Navigator.pushNamed(context, "/accountSettings");
-            }
-            ),
-            _menuItem(
-              Icons.notifications_none,
-              "Notification",
-              showBadge: true,
-                onTap: (){
-                  setState(() => isMenuOpen = false);
-                  Navigator.pushNamed(context, "/notifications");
-                }
-            ),
-            _menuItem(Icons.search, "Notification Settings",
-                onTap: (){
-                  setState(() => isMenuOpen = false);
-                  Navigator.pushNamed(context, "/notificationSettings");
-                }),
-            _menuItem(Icons.tune, "Preferences",
-                onTap: (){
-                  setState(() => isMenuOpen = false);
-                  Navigator.pushNamed(context, "/preferences");
-                }),
-            _menuItem(Icons.shield_outlined, "Privacy Settings",
-                onTap: (){
-                  setState(() => isMenuOpen = false);
-                  Navigator.pushNamed(context, "/privacySettings");
-                }),
-            _menuItem(Icons.lock_outline, "Security Settings",
-                onTap: (){
-                  setState(() => isMenuOpen = false);
-                  Navigator.pushNamed(context, "/securitySettings");
-                }),
-            _menuItem(Icons.help_outline, "FAQ",
-                onTap: (){
-                  setState(() => isMenuOpen = false);
-                  Navigator.pushNamed(context, "/faq");
-                }),
-            _menuItem(Icons.privacy_tip_outlined, "Privacy Policy",
-                onTap: (){
-                  setState(() => isMenuOpen = false);
-                  Navigator.pushNamed(context, "/privacyPolicy");
-                }),
-            _menuItem(Icons.description_outlined, "Terms Of Services",
-                onTap: (){
-                  setState(() => isMenuOpen = false);
-                  Navigator.pushNamed(context, "/");
-                }),
-            //const Text("Log Out", style: TextStyle(color: Colors.white70)),
-          ],
-        ),
       ),
     );
   }
@@ -468,8 +349,6 @@ Widget buildPostCard(BuildContext context) {
                   }),
                 ),
               ),
-
-              //RatingBar
             ],
           ),
         ),
@@ -514,27 +393,3 @@ Widget buildPostCard(BuildContext context) {
   );
 }
 
-Widget _menuItem(IconData icon, String title, {bool showBadge = false, VoidCallback? onTap,}) {
-  return ListTile(
-    leading: Icon(icon, color: Colors.white70),
-    title: Row(
-      children: [
-        Text(title, style: const TextStyle(color: Colors.white70)),
-        if (showBadge)
-          Container(
-            margin: const EdgeInsets.only(left: 8),
-            padding: const EdgeInsets.all(4),
-            decoration: const BoxDecoration(
-              color: Colors.red,
-              shape: BoxShape.circle,
-            ),
-            child: const Text(
-              "1",
-              style: TextStyle(fontSize: 10, color: Colors.white),
-            ),
-          ),
-      ],
-    ),
-    onTap: onTap,
-  );
-}

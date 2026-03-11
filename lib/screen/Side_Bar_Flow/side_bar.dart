@@ -8,56 +8,59 @@ class SideBar extends StatefulWidget {
 }
 
 class _HomePageState extends State<SideBar> {
-
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
   bool isSwitched = true;
   bool isMenuOpen = false;
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
-          backgroundColor: const Color(0xFF0D0702),
-          child: SafeArea(
-            child: ListView(
-              children:  [
-                SizedBox(height:20),
-                Row(
-
-                  children: [
-                    Padding(padding: const EdgeInsets.only(left: 15),
-                      child: const CircleAvatar(
-                        radius: 25,
-                        backgroundColor: Colors.amber,
-                        child: Icon(Icons.star, color: Colors.black),
-                      ),
-                    ),
-                    const Spacer(),
-                    IconButton(
-                      onPressed: () => setState(() => isMenuOpen = false),
-                      icon:Icon(Icons.close, color: Colors.amber),
-                    ),
-                  ],
+      backgroundColor: const Color(0xFF0D0702),
+      child: SafeArea(
+        child: ListView(
+          children: [
+            SizedBox(height: 20),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 15),
+                  child: const CircleAvatar(
+                    radius: 25,
+                    backgroundColor: Colors.amber,
+                    child: Icon(Icons.star, color: Colors.black),
+                  ),
                 ),
-            
-                _menuItem(Icons.person_outline, "Account Settings"),
-                _menuItem(Icons.notifications_none, "Notification", showBadge: true,),
-                _menuItem(Icons.search, "Notification Settings"),
-                _menuItem(Icons.tune, "Preferences"),
-                _menuItem(Icons.shield_outlined, "Privacy Settings"),
-                _menuItem(Icons.lock_outline, "Security Settings"),
-                _menuItem(Icons.help_outline, "FAQ"),
-                _menuItem(Icons.privacy_tip_outlined, "Privacy Policy"),
-                _menuItem(Icons.description_outlined, "Terms Of Services"),
-                _viewPortSwitch(),
-                SizedBox(height: 10),
-                _logoutButton(),
-            
+                const Spacer(),
+                IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(Icons.close, color: Colors.amber),
+                ),
               ],
             ),
-          ),
+
+            _menuItem(Icons.person_outline, "Account Settings",routeName: "/accountSettings"),
+            _menuItem(Icons.notifications_none, "Notification", showBadge: true,routeName: "/notifications"),
+            _menuItem(Icons.search, "Notification Settings",routeName: "/notificationSettings"),
+            _menuItem(Icons.tune, "Preferences",routeName: "/preferences"),
+            _menuItem(Icons.shield_outlined, "Privacy Settings",routeName: "/privacySettings"),
+            _menuItem(Icons.lock_outline, "Security Settings", routeName: "/securitySettings"),
+            _menuItem(Icons.help_outline, "FAQ", routeName: "/faq"),
+            _menuItem(Icons.privacy_tip_outlined, "Privacy Policy",routeName: "/privacyPolicy"),
+            _menuItem(Icons.description_outlined, "Terms Of Services"),
+            _viewPortSwitch(),
+            SizedBox(height: 10),
+            _logoutButton(),
+          ],
+        ),
+      ),
     );
   }
 
-  Widget _menuItem(IconData icon, String title, {bool showBadge = false}) {
+
+
+  Widget _menuItem(IconData icon, String title, {bool showBadge = false,String? routeName}) {
     return ListTile(
       leading: Icon(icon, color: Colors.white70),
       title: Row(
@@ -71,14 +74,22 @@ class _HomePageState extends State<SideBar> {
                 color: Colors.red,
                 shape: BoxShape.circle,
               ),
-              child: const Text("1", style: TextStyle(fontSize: 10, color: Colors.white),),
+              child: const Text(
+                "1",
+                style: TextStyle(fontSize: 10, color: Colors.white),
+              ),
             ),
         ],
       ),
-      onTap: () {},
+      onTap: () {
+        Navigator.pop(context);
+
+        if (routeName != null) {
+          Navigator.pushNamed(context, routeName);
+        }
+      },
     );
   }
-
 
   Widget _logoutButton() {
     return ListTile(
@@ -108,5 +119,4 @@ class _HomePageState extends State<SideBar> {
       ),
     );
   }
-
 }
