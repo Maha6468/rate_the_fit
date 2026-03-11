@@ -27,15 +27,15 @@ import '../screen/rating_flow/rating_flow_screen.dart';
 class AppRoutes {
   static Map<String, WidgetBuilder> routes = {
     "/": (context) => Splash_Screen(),
-    "/login": (context)=> Login(),
-    "/otp":(context)=>OTP_Varification(),
+    "/login": (context) => Login(),
+    "/otp": (context) => OTP_Varification(),
     "/home": (context) => Home(),
     "/signup": (context) => Sign_Up(),
     "/createPost": (context) => Create_Post(),
     "/chat1": (context) => Chat_1(),
     "/chat2": (context) => Chat_2(),
     "/chatInner": (context) => Chat_Inner(),
-    "/sidebar": (context) => CustomDrawer(),
+    "/sidebar": (context) => SideBar(),
     "/accountSettings": (context) => Account_Settings(),
     "/notificationSettings": (context) => Notification_Settings(),
     "/notifications": (context) => Notifications(),
@@ -48,7 +48,7 @@ class AppRoutes {
     "/addStory": (context) => Add_To_Story(),
     "/rating1": (context) => Rating_Home_1(),
     "/rating2": (context) => Rating_Home_2(),
-    "/ratingflowscreen":(context)=> RatingFlowScreen(),
+    "/ratingflowscreen": (context) => RatingFlowScreen(),
     "/search_1": (context) => Search_1(),
   };
 }
