@@ -1,26 +1,30 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CustomDrawer extends StatefulWidget {
-  const CustomDrawer({super.key});
+class SideBar extends StatefulWidget {
+  const SideBar({super.key});
 
   @override
-  State<CustomDrawer> createState() => _CustomDrawerState();
+  State<SideBar> createState() => _HomePageState();
 }
 
-class _CustomDrawerState extends State<CustomDrawer> {
-  bool isSwitched = true;
-  bool isMenuOpen=true;
+class _HomePageState extends State<SideBar> {
 
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+  bool isSwitched = true;
+  bool isMenuOpen = false;
   @override
   Widget build(BuildContext context) {
-    
-    return Drawer(
-      backgroundColor: const Color(0xFF0D0702),
-      child: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+    return Scaffold(
+      key: scaffoldKey,
+      appBar: AppBar(
+        title: const Text("Home"),
+        automaticallyImplyLeading: false,
+      ),
+
+      drawer: Drawer(
+        backgroundColor: const Color(0xFF0D0702),
+        child: ListView(
+          children:  [
             Row(
               children: [
                 const CircleAvatar(
@@ -31,11 +35,18 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 const Spacer(),
                 IconButton(
                   onPressed: () => setState(() => isMenuOpen = false),
-                  icon: const Icon(Icons.close, color: Colors.amber),
+                  //onPressed: (){},
+                  icon:Icon(Icons.close, color: Colors.amber),
                 ),
               ],
             ),
-            
+            // ListTile(
+            //   title: Text("Profile"),
+            // ),
+            // ListTile(
+            //   title: Text("Settings"),
+            // ),
+
             _menuItem(Icons.person_outline, "Account Settings"),
             _menuItem(
               Icons.notifications_none,
@@ -49,14 +60,36 @@ class _CustomDrawerState extends State<CustomDrawer> {
             _menuItem(Icons.help_outline, "FAQ"),
             _menuItem(Icons.privacy_tip_outlined, "Privacy Policy"),
             _menuItem(Icons.description_outlined, "Terms Of Services"),
-            
-            //const Spacer(),
-           // _viewPortSwitch(),
-            
-            const SizedBox(height: 20),
-            //_logoutButton(),
+
+            Spacer(),
+            _viewPortSwitch(),
+            SizedBox(height: 20),
+            _logoutButton(),
+
           ],
         ),
+      ),
+
+      body: const Center(
+        child: Text("Home Screen"),
+      ),
+
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.menu),
+            label: "Menu",
+          ),
+        ],
+        onTap: (index) {
+          if(index == 1){
+            scaffoldKey.currentState?.openDrawer();
+          }
+        },
       ),
     );
   }
@@ -86,6 +119,16 @@ class _CustomDrawerState extends State<CustomDrawer> {
     );
   }
 
+
+
+  Widget _logoutButton() {
+    return ListTile(
+      leading: const Icon(Icons.logout, color: Colors.white70),
+      title: const Text("Log Out", style: TextStyle(color: Colors.white70)),
+      onTap: () {},
+    );
+  }
+
   Widget _viewPortSwitch() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -107,11 +150,5 @@ class _CustomDrawerState extends State<CustomDrawer> {
     );
   }
 
-  Widget _logoutButton() {
-    return ListTile(
-      leading: const Icon(Icons.logout, color: Colors.white70),
-      title: const Text("Log Out", style: TextStyle(color: Colors.white70)),
-      onTap: () {},
-    );
-  }
+
 }
