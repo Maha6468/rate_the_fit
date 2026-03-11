@@ -25,7 +25,14 @@ class _HomeState extends State<Home> {
     "assets/images/nahid.JPG",
     "assets/images/saim.jpg",
   ];
-  final List<String> userNames = ["Firad","Cameron", "Ibnul", "Mariya", "Nahid", "Saim"];
+  final List<String> userNames = [
+    "Firad",
+    "Cameron",
+    "Ibnul",
+    "Mariya",
+    "Nahid",
+    "Saim",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -45,8 +52,7 @@ class _HomeState extends State<Home> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.pushNamed(
-                  context,'/search_1');
+              Navigator.pushNamed(context, '/search_1');
             },
             icon: Icon(Icons.search, size: 45, color: Colors.grey),
           ),
@@ -75,7 +81,7 @@ class _HomeState extends State<Home> {
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         padding: EdgeInsets.symmetric(horizontal: 10),
-                        itemCount: userImage.length +1,
+                        itemCount: userImage.length + 1,
                         itemBuilder: (context, index) {
                           if (index == 0) {
                             return Padding(
@@ -99,7 +105,9 @@ class _HomeState extends State<Home> {
                                         onPressed: () {
                                           print("maha");
                                           Navigator.pushNamed(
-                                              context,'/addStory');
+                                            context,
+                                            '/addStory',
+                                          );
                                         },
                                         icon: Icon(
                                           Icons.add,
@@ -117,8 +125,8 @@ class _HomeState extends State<Home> {
                             );
                           } else {
                             return buildStory(
-                              userImage[index -1],
-                              userNames[index -1],
+                              userImage[index - 1],
+                              userNames[index - 1],
                             );
                           }
                         },
@@ -134,12 +142,12 @@ class _HomeState extends State<Home> {
             ),
           ),
 
-          if (isMenuOpen) _buildOverlay(),
-          //_buildSideMenu(),
-          _buildSideMenu(() {
-            setState(() => isMenuOpen = false);
-          }),
-          //CustomDrawer()
+          // if (isMenuOpen) _buildOverlay(),
+          // _buildSideMenu(() {
+          //   setState(() => isMenuOpen = false);
+          // }),
+
+          //SideBar(),
         ],
       ),
 
@@ -160,28 +168,26 @@ class _HomeState extends State<Home> {
 
         onTap: (index) {
           if (index == 1) {
-            Navigator.pushNamed(
-              context, "/ratingflowscreen"
-            );
-          }
-          else if(index==2){
-            Navigator.pushNamed(
-                context, "/createPost"
-            );
-          }
-          else if(index==3){
-            Navigator.pushNamed(
-                context, "/chat1"
-            );
-          }
-          else if (index == 4) {
+            Navigator.pushNamed(context, "/ratingflowscreen");
+          } else if (index == 2) {
+            Navigator.pushNamed(context, "/createPost");
+          } else if (index == 3) {
+            Navigator.pushNamed(context, "/chat1");
+          } else if (index == 4) {
             setState(() => isMenuOpen = true);
-          }
-          else {
+
+            //Navigator.pushNamed(context, "/sidebar");
+
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(
+            //     builder: (context) => SideBar(),
+            //   ),
+            // );
+          } else {
             setState(() => _page = index);
           }
         },
-
       ),
     );
   }
@@ -189,7 +195,7 @@ class _HomeState extends State<Home> {
   Widget _buildOverlay() {
     return GestureDetector(
       onTap: () => setState(() => isMenuOpen = false),
-      child: Container(color: Colors.red.withOpacity(0.5)),
+      child: Container(color: Colors.transparent.withOpacity(0.5)),
     );
   }
 
@@ -214,6 +220,7 @@ class _HomeState extends State<Home> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+           // SideBar()
             Row(
               children: [
                 const CircleAvatar(
@@ -232,19 +239,56 @@ class _HomeState extends State<Home> {
 
             SizedBox(height: 10),
 
-            _menuItem(Icons.person_outline, "Account Settings"),
+            _menuItem(Icons.person_outline, "Account Settings",
+            onTap: (){
+              setState(() => isMenuOpen = false);
+              Navigator.pushNamed(context, "/accountSettings");
+            }
+            ),
             _menuItem(
               Icons.notifications_none,
               "Notification",
               showBadge: true,
+                onTap: (){
+                  setState(() => isMenuOpen = false);
+                  Navigator.pushNamed(context, "/notifications");
+                }
             ),
-            _menuItem(Icons.search, "Notification Settings"),
-            _menuItem(Icons.tune, "Preferences"),
-            _menuItem(Icons.shield_outlined, "Privacy Settings"),
-            _menuItem(Icons.lock_outline, "Security Settings"),
-            _menuItem(Icons.help_outline, "FAQ"),
-            _menuItem(Icons.privacy_tip_outlined, "Privacy Policy"),
-            _menuItem(Icons.description_outlined, "Terms Of Services"),
+            _menuItem(Icons.search, "Notification Settings",
+                onTap: (){
+                  setState(() => isMenuOpen = false);
+                  Navigator.pushNamed(context, "/notificationSettings");
+                }),
+            _menuItem(Icons.tune, "Preferences",
+                onTap: (){
+                  setState(() => isMenuOpen = false);
+                  Navigator.pushNamed(context, "/preferences");
+                }),
+            _menuItem(Icons.shield_outlined, "Privacy Settings",
+                onTap: (){
+                  setState(() => isMenuOpen = false);
+                  Navigator.pushNamed(context, "/privacySettings");
+                }),
+            _menuItem(Icons.lock_outline, "Security Settings",
+                onTap: (){
+                  setState(() => isMenuOpen = false);
+                  Navigator.pushNamed(context, "/securitySettings");
+                }),
+            _menuItem(Icons.help_outline, "FAQ",
+                onTap: (){
+                  setState(() => isMenuOpen = false);
+                  Navigator.pushNamed(context, "/faq");
+                }),
+            _menuItem(Icons.privacy_tip_outlined, "Privacy Policy",
+                onTap: (){
+                  setState(() => isMenuOpen = false);
+                  Navigator.pushNamed(context, "/privacyPolicy");
+                }),
+            _menuItem(Icons.description_outlined, "Terms Of Services",
+                onTap: (){
+                  setState(() => isMenuOpen = false);
+                  Navigator.pushNamed(context, "/");
+                }),
             //const Text("Log Out", style: TextStyle(color: Colors.white70)),
           ],
         ),
@@ -283,19 +327,19 @@ Widget buildPostCard(BuildContext context) {
           leading: Transform.translate(
             offset: Offset(-1, 0),
             child: GestureDetector(
-              onTap: (){
-                Navigator.pushNamed(context,'/someoneElse');
+              onTap: () {
+                Navigator.pushNamed(context, '/someoneElse');
               },
               child: const CircleAvatar(
-                backgroundImage: AssetImage("assets/images/profile_pic.png",),
+                backgroundImage: AssetImage("assets/images/profile_pic.png"),
               ),
             ),
           ),
           title: Transform.translate(
             offset: Offset(-6, 0),
             child: GestureDetector(
-              onTap: (){
-                Navigator.pushNamed(context,'/someoneElse');
+              onTap: () {
+                Navigator.pushNamed(context, '/someoneElse');
               },
               child: const Text(
                 "Cameron Williamson",
@@ -462,7 +506,7 @@ Widget buildPostCard(BuildContext context) {
   );
 }
 
-Widget _menuItem(IconData icon, String title, {bool showBadge = false}) {
+Widget _menuItem(IconData icon, String title, {bool showBadge = false, VoidCallback? onTap,}) {
   return ListTile(
     leading: Icon(icon, color: Colors.white70),
     title: Row(
@@ -483,6 +527,6 @@ Widget _menuItem(IconData icon, String title, {bool showBadge = false}) {
           ),
       ],
     ),
-    onTap: () {},
+    onTap: onTap,
   );
 }
