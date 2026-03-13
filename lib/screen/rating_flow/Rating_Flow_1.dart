@@ -120,6 +120,7 @@ class Rating_Home_1 extends StatelessWidget {
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
+                        overflow: TextOverflow.ellipsis,
                       ),
 
                       const SizedBox(width: 10),
