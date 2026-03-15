@@ -19,11 +19,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      // initialRoute: "/",
-      // routes: AppRoutes.routes,
+      initialRoute: "/",
+      routes: AppRoutes.routes,
       //home: Home(),
       //home: SideBar(),
-      home: Splash_Screen(),
+      //home: Splash_Screen(),
     );
   }
 }

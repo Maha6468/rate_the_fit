@@ -13,7 +13,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 5), () {
+    Timer(const Duration(minutes: 5), () {
       Navigator.pushReplacementNamed(
         context, "/login"
       );
