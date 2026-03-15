@@ -46,8 +46,8 @@ class _Splash_ScreenState extends State<Splash_Screen> {
                     BoxShadow(
                       color: Colors.black54,
                       blurRadius: 15,
-                      spreadRadius: 2,
-                      offset: Offset(0, 5),
+                      spreadRadius: 3,
+                      offset: Offset(2, 5),
                     ),
                   ],
                 ),
