@@ -30,7 +30,7 @@ class _OTP_VarificationState extends State<OTP_Varification> {
       ),
       decoration: BoxDecoration(
         color: Colors.black54,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(12),
         border: Border.all(color: Colors.grey.shade800),
       ),
     );
