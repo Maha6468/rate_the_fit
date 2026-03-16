@@ -45,7 +45,7 @@ class _Custom_CongratulationsState extends State<Congratulations>
         height: 376,
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: Color(0xFF2C2117), // card color
+          color: Color(0xFF2C2117),
           borderRadius: BorderRadius.circular(20),
         ),
         child: Center(
@@ -84,8 +84,8 @@ class _Custom_CongratulationsState extends State<Congratulations>
                 //child: CircularProgressIndicator(),
                 child: Image.asset(
                   "assets/images/Loading.png",
-                  height: 50,
-                  width: 50,
+                  height: 40,
+                  width: 40,
                 ),
               ),
             ],
