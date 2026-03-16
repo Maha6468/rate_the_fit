@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:rate_the_fit/screen/Side_Bar_Flow/side_bar.dart';
 import '../../coustom_widget/custom_star_image.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-
 class Home extends StatefulWidget {
   const Home({super.key});
-
   @override
   State<Home> createState() => _HomeState();
 }
