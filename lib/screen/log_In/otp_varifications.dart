@@ -79,7 +79,7 @@ class _OTP_VarificationState extends State<OTP_Varification> {
 
                   Center(
                     child: Pinput(
-                      length: 4,
+                      length: 5,
                       controller: pinController,
                       focusNode: focusNode,
                       defaultPinTheme: defaultPinTheme,
