@@ -47,8 +47,7 @@ class _NewPostScreenState extends State<Create_Post> {
       backgroundColor: Color(0x000000),
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.all(16),
+          child: Padding(padding: EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -56,9 +55,7 @@ class _NewPostScreenState extends State<Create_Post> {
                   children: [
                     Icon(Icons.close, color: Colors.white),
                     SizedBox(width: 10),
-                    Text(
-                      "New Post",
-                      style: TextStyle(
+                    Text("New Post", style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
@@ -79,8 +76,7 @@ class _NewPostScreenState extends State<Create_Post> {
                           child: Wrap(
                             children: [
                               ListTile(
-                                leading: const Icon(
-                                  Icons.photo,
+                                leading: const Icon(Icons.photo,
                                   color: Colors.white,
                                 ),
                                 title: const Text(
@@ -119,10 +115,10 @@ class _NewPostScreenState extends State<Create_Post> {
                       borderRadius: BorderRadius.circular(16),
                       gradient: const LinearGradient(
                         colors: [
-                          // Color(0xff1a1a1a),
-                          // Color(0xff2a2a2a)
-                          Color(0xFF1C1914),
-                          Color(0xFF090C0E),
+                           Color(0xff1a1a1a),
+                           Color(0xff2a2a2a),
+                         // Color(0xFF1C1914),
+                         // Color(0xFF090C0E),
                         ],
                       ),
                     ),
