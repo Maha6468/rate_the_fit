@@ -32,10 +32,7 @@ class  Search_1 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: const Icon(Icons.arrow_back,color: Colors.white),
-        title: const Text(
-          "Explore",
-          style: TextStyle(color: Colors.white),
-        ),
+        title: const Text("Explore",style: TextStyle(color: Colors.white),),
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 15),
@@ -75,8 +72,7 @@ class  Search_1 extends StatelessWidget {
           Expanded(
             child: GridView.builder(
               itemCount: images.length,
-              gridDelegate:
-              const SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing: 10,
                 crossAxisSpacing: 10,
@@ -101,24 +97,24 @@ class  Search_1 extends StatelessWidget {
         onPressed: () {},
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.black,
-        shape: const CircularNotchedRectangle(),
-        notchMargin: 8,
-        child: SizedBox(
-          height: 60,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
-              Icon(Icons.home,color: Colors.white),
-              Icon(Icons.star_border,color: Colors.white),
-              SizedBox(width: 40),
-              Icon(Icons.chat_bubble_outline,color: Colors.white),
-              Icon(Icons.person_outline,color: Colors.white),
-            ],
-          ),
-        ),
-      ),
+      // bottomNavigationBar: BottomAppBar(
+      //   color: Colors.black,
+      //   shape: const CircularNotchedRectangle(),
+      //   notchMargin: 8,
+      //   child: SizedBox(
+      //     height: 60,
+      //     child: Row(
+      //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //       children: const [
+      //         Icon(Icons.home,color: Colors.white),
+      //         Icon(Icons.star_border,color: Colors.white),
+      //         SizedBox(width: 40),
+      //         Icon(Icons.chat_bubble_outline,color: Colors.white),
+      //         Icon(Icons.person_outline,color: Colors.white),
+      //       ],
+      //     ),
+      //   ),
+      // ),
     );
   }
 }
