@@ -240,7 +240,6 @@ Widget buildPostCard(BuildContext context) {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 1, vertical: 0),
               decoration: BoxDecoration(
-                //color: Color(0xFF3B2F2F),
                 color: Colors.black26,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(-5),
@@ -314,7 +313,7 @@ Widget buildPostCard(BuildContext context) {
             alignment: Alignment.center,
             children: [
               Container(
-                height: 2,
+                height: 1,
                 margin: const EdgeInsets.symmetric(horizontal: 8),
                 decoration: BoxDecoration(
                   color: Colors.white,
