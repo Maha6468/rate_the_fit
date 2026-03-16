@@ -83,9 +83,7 @@ class _HomeState extends State<Home> {
                         itemBuilder: (context, index) {
                           if (index == 0) {
                             return Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 5.0,
-                              ),
+                              padding: const EdgeInsets.symmetric(horizontal: 5.0,),
                               child: Column(
                                 children: [
                                   CircleAvatar(
@@ -102,15 +100,9 @@ class _HomeState extends State<Home> {
                                       child: IconButton(
                                         onPressed: () {
                                           print("maha");
-                                          Navigator.pushNamed(
-                                            context,
-                                            '/addStory',
-                                          );
+                                          Navigator.pushNamed(context, '/addStory',);
                                         },
-                                        icon: Icon(
-                                          Icons.add,
-                                          color: Colors.white,
-                                        ),
+                                        icon: Icon(Icons.add,color: Colors.white,),
                                       ),
                                     ),
                                   ),
@@ -170,7 +162,6 @@ class _HomeState extends State<Home> {
             if(index==4){
               scaffoldKey.currentState?.openDrawer();
             }
-            //Navigator.pushNamed(context, "/sidebar");
           } else {
             setState(() => _page = index);
           }
