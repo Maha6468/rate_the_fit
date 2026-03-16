@@ -52,7 +52,7 @@ class _HomeState extends State<Home> {
             onPressed: () {
               Navigator.pushNamed(context, '/search_1');
             },
-            icon: Icon(Icons.search, size: 45, color: Colors.grey),
+            icon: Icon(Icons.search, size: 45, color: Colors.white),
           ),
         ],
       ),
