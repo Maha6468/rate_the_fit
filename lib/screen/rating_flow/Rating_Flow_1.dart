@@ -11,8 +11,7 @@ class Rating_Home_1 extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 15),
+        leading: Padding(padding: const EdgeInsets.only(left: 15),
           child: CircleAvatar(
             radius: 28,
             backgroundColor: Colors.black,
@@ -20,22 +19,17 @@ class Rating_Home_1 extends StatelessWidget {
               "assets/images/star.png",
               height: 100,
               width: 100,
-              fit: BoxFit.cover,
+              fit: BoxFit.contain,
             ),
           ),
         ),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
-            Text(
-              "Welcome 👋",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
+        title: Text(
+          "Welcome 👋",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         actions: [
           Padding(
@@ -58,38 +52,34 @@ class Rating_Home_1 extends StatelessWidget {
                     image: AssetImage(
                       "assets/rating_image/max-titov-Mhktr6dFD3I-unsplash 1 (1).png",
                     ),
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fill,
                   ),
                 ),
               ),
             ),
 
             Positioned(
-              right: 10,
-              bottom: 150,
+              right: 15,
+              bottom: 180,
               child: Column(
                 children: const [
                   Icon(Icons.favorite_border, color: Colors.white, size: 30),
                   SizedBox(height: 5),
                   Text("4.5M", style: TextStyle(color: Colors.white)),
 
-                  SizedBox(height: 20),
+                  SizedBox(height: 5),
 
-                  Icon(
-                    Icons.chat_bubble_outline,
-                    color: Colors.white,
-                    size: 30,
-                  ),
+                  Icon(Icons.chat_bubble_outline,color: Colors.white,size: 30,),
                   SizedBox(height: 5),
                   Text("25.2K", style: TextStyle(color: Colors.white)),
 
-                  SizedBox(height: 20),
+                  SizedBox(height: 5),
 
                   Icon(Icons.bookmark_border, color: Colors.white, size: 30),
                   SizedBox(height: 5),
                   Text("850K", style: TextStyle(color: Colors.white)),
 
-                  SizedBox(height: 20),
+                  SizedBox(height: 5),
 
                   Icon(Icons.star_border, color: Colors.white, size: 30),
                   SizedBox(height: 5),
@@ -113,18 +103,14 @@ class Rating_Home_1 extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(width: 10),
-
-                      const Text(
-                        "Cameron Williamson",
+                      const Text("Cameron Williamson",
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
                         overflow: TextOverflow.ellipsis,
                       ),
-
                       const SizedBox(width: 10),
-
                       Container(
                         padding: const EdgeInsets.symmetric(
                           horizontal: 10,
@@ -132,20 +118,16 @@ class Rating_Home_1 extends StatelessWidget {
                         ),
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.white),
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(10),
                         ),
-                        child: const Text(
-                          "Follow",
-                          style: TextStyle(color: Colors.white),
-                        ),
+                        child: const Text("Follow",style: TextStyle(color: Colors.white),),
                       ),
                     ],
                   ),
 
                   const SizedBox(height: 10),
 
-                  const Text(
-                    "Tell me what excites you and makes you smile 🤗 Only good conversations – no bad texters!",
+                  const Text("Tell me what excites you and makes you smile 🤗 Only good conversations – no bad texters!",
                     style: TextStyle(color: Colors.white),
                   ),
 
@@ -164,7 +146,7 @@ class Rating_Home_1 extends StatelessWidget {
               ),
             ),
 
-            /// Bottom Navigation
+
           ],
         ),
       ),
