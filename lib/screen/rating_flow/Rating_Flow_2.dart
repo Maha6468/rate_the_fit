@@ -20,22 +20,17 @@ class Rating_Home_2 extends StatelessWidget {
               "assets/images/star.png",
               height: 100,
               width: 100,
-              fit: BoxFit.cover,
+              fit: BoxFit.contain,
             ),
           ),
         ),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
-            Text(
-              "Welcome 👋",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
+        title:Text(
+          "Welcome 👋",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         actions: [
           Padding(
