@@ -12,9 +12,9 @@ A few resources to get you started if this is your first Flutter project:
 |-------|----------|-----------------|
 | ![Splash_Screen](screenshorts/Splash_Screen.jpg) | 
 
-| Login | OTP_Varification | Congratulations |
+| Login | OTP_Varifications | Congratulations |
 |-------|----------|-----------------|
-| ![Login](screenshorts/Login.jpg) | | ![OTP_Varification](screenshorts/OTP_Varification.jpg) | | ![Congratulations](screenshorts/Congratulations.jpg) | 
+| ![Login](screenshorts/Login.jpg) | | ![OTP_Varification](screenshorts/OTP_Varifications.jpg) | | ![Congratulations](screenshorts/Congratulations.jpg) | 
 
 |-------|----------|-----------------|
 
