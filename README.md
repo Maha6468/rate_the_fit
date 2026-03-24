@@ -8,6 +8,6 @@ This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
-| Login | Sign In | Update Password |
+| Splash_Screen | Sign In | Update Password |
 |-------|----------|-----------------|
-| ![Login](screenshots/log_in.jpg) | ![Sign In](screenshots/sign_in.jpg) | ![Update Password](screenshots/update_password.jpg) |
+| ![Splash_Screen](screenshorts/Splash_Screen.jpg) | 
