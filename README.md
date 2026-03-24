@@ -36,6 +36,10 @@ A few resources to get you started if this is your first Flutter project:
 |-------|----------|-----------------|-------------|
 | ![Chat_1](screenshorts/Chat_1.jpg) | ![Chat_1](screenshorts/Chat_1.jpg) | ![Chat_Inner](screenshorts/Chat_Inner.jpg) | ![Chat_Inner_1](screenshorts/Chat_Inner_1.jpg) |
 
+| Someone_else |
+|-------|-------|
+| ![Someone_else](screenshorts/Someone_else.jpg) | 
+
 
 
 |-------|----------|-----------------|
