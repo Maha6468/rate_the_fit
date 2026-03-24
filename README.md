@@ -16,8 +16,8 @@ A few resources to get you started if this is your first Flutter project:
 |-------|----------|-----------------|
 | ![Login](screenshorts/Login.jpg) | ![OTP_Varification](screenshorts/OTP_Varification.jpg) | ![Congratulations](screenshorts/Congratulations.jpg) | 
 
-|-------|----------|-----------------|
 | Sign_Up | OTP_Varification | Congratulations |
+|-------|----------|-----------------|
 | ![Sign_Up](screenshorts/Sign_Up.jpg) | ![OTP_Varification](screenshorts/OTP_Varification.jpg) | ![Congratulations](screenshorts/Congratulations.jpg) |
 
 
