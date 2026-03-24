@@ -28,6 +28,10 @@ A few resources to get you started if this is your first Flutter project:
 |-------|----------|
 | ![Rating_Home_1](screenshorts/Rating_Home_1.jpg) | ![Rating_Home_2](screenshorts/Rating_Home_2.jpg) | 
 
+| Create_Post | Create_Post_1 |
+|-------|-------|
+| ![Create_Post](screenshorts/Create_Post.jpg) | ![Create_Post_1](screenshorts/Create_Post_1.jpg) | 
+
 
 |-------|----------|-----------------|
 
