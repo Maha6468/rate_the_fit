@@ -20,6 +20,9 @@ A few resources to get you started if this is your first Flutter project:
 |-------|----------|-----------------|
 | ![Sign_Up](screenshorts/Sign_Up.jpg) | ![OTP_Varification](screenshorts/OTP_Varification.jpg) | ![Congratulations](screenshorts/Congratulations.jpg) |
 
+| Home | Add_To_Story | Search_1 |
+|-------|----------|-----------------|
+| ![Home](screenshorts/Home.jpg) | ![Add_To_Story](screenshorts/Add_To_Story.jpg) | ![Search_1](screenshorts/Search_1.jpg) |
 
 
 |-------|----------|-----------------|
