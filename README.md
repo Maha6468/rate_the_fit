@@ -44,13 +44,3 @@ A few resources to get you started if this is your first Flutter project:
 |-------|--------|--------|---------|---------|---------|---------|---------|---------|----------|----------|---------|
 | ![SideBar](screenshorts/SideBar.jpg) | ![Account_Settings](screenshorts/Account_Settings.jpg) | ![Notification_Settings](screenshorts/Notification_Settings.jpg) | ![Notifications](screenshorts/Notifications.jpg) | ![Preferences_1](screenshorts/Preferences_1.jpg) | ![Preferences_2](screenshorts/Preferences_2.jpg) | ![Privacy_Settings_1](screenshorts/Privacy_Settings_1.jpg) | ![Privacy_Settings_2](screenshorts/Privacy_Settings_2.jpg) | ![Security_Settings_1](screenshorts/Security_Settings_1.jpg) | ![Security_Settings_2](screenshorts/Security_Settings_2.jpg.jpeg) | ![Faq_Screen](screenshorts/Faq_Screen.jpg) | ![PrivacyPolicyScreen](screenshorts/PrivacyPolicyScreen.jpg) |
 
-
-
-
-
-
-
-|-------|----------|-----------------|
-
-
-|-------|----------|-----------------|
