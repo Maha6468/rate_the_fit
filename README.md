@@ -79,7 +79,7 @@ This project is a starting point for a Flutter application.
 <table>
 <tr>
 <td><img src="screenshorts/Chat_1.jpg" width="200"/></td>
-<td><img src="screenshorts/Chat_1.jpg" width="200"/></td>
+<td><img src="screenshorts/Chat_2.jpg" width="200"/></td>
 <td><img src="screenshorts/Chat_Inner.jpg" width="200"/></td>
 <td><img src="screenshorts/Chat_Inner_1.jpg" width="200"/></td>
 </tr>
