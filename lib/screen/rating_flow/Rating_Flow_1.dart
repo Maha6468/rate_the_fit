@@ -17,7 +17,7 @@ class Rating_Home_1 extends StatelessWidget {
             backgroundColor: Colors.black,
             child: Image.asset(
               "assets/images/star.png",
-              height: 10,
+              height: 100,
               width: 100,
               fit: BoxFit.contain,
             ),
