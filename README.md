@@ -6,41 +6,113 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-| Splash_Screen 
-| ![Splash_Screen](screenshorts/Splash_Screen.jpg) | 
+## Splash Screen
 
-| Login | OTP_Varification | Congratulations |
-|-------|----------|-----------------|
-| ![Login](screenshorts/Login.jpg) | ![OTP_Varification](screenshorts/OTP_Varification.jpg) | ![Congratulations](screenshorts/Congratulations.jpg) | 
+<p align="center">
+  <img src="screenshorts/Splash_Screen.jpg" width="200"/>
+</p>
 
-| Sign_Up | OTP_Varification | Congratulations |
-|-------|----------|-----------------|
-| ![Sign_Up](screenshorts/Sign_Up.jpg) | ![OTP_Varification](screenshorts/OTP_Varification.jpg) | ![Congratulations](screenshorts/Congratulations.jpg) |
+---
 
-| Home | Add_To_Story | Search_1 |
-|-------|----------|-----------------|
-| ![Home](screenshorts/Home.jpg) | ![Add_To_Story](screenshorts/Add_To_Story.jpg) | ![Search_1](screenshorts/Search_1.jpg) |
+## Login Flow
 
-| Rating_Home_1 | Rating_Home_2 |
-|-------|----------|
-| ![Rating_Home_1](screenshorts/Rating_Home_1.jpg) | ![Rating_Home_2](screenshorts/Rating_Home_2.jpg) | 
+<table>
+<tr>
+<td><img src="screenshorts/Login.jpg" width="200"/></td>
+<td><img src="screenshorts/OTP_Varification.jpg" width="200"/></td>
+<td><img src="screenshorts/Congratulations.jpg" width="200"/></td>
+</tr>
+</table>
 
-| Create_Post | Create_Post_1 |
-|-------|-------|
-| ![Create_Post](screenshorts/Create_Post.jpg) | ![Create_Post_1](screenshorts/Create_Post_1.jpg) | 
+---
 
-| Chat_1 | Chat_1 | Chat_Inner | Chat_Inner_1 |
-|-------|----------|-----------|-------------|
-| ![Chat_1](screenshorts/Chat_1.jpg) | ![Chat_1](screenshorts/Chat_1.jpg) | ![Chat_Inner](screenshorts/Chat_Inner.jpg) | ![Chat_Inner_1](screenshorts/Chat_Inner_1.jpg) |
+## Sign Up Flow
 
-| Someone_else |
-|-------|
-| ![Someone_else](screenshorts/Someone_else.jpg) | 
+<table>
+<tr>
+<td><img src="screenshorts/Sign_Up.jpg" width="200"/></td>
+<td><img src="screenshorts/OTP_Varification.jpg" width="200"/></td>
+<td><img src="screenshorts/Congratulations.jpg" width="200"/></td>
+</tr>
+</table>
 
+---
 
-| SideBar | Account_Settings | Notification_Settings | Notifications | Preferences_1 | Preferences_2 | Privacy_Settings_1 | Privacy_Settings_2 | Security_Settings_1 | Security_Settings_2 | Faq_Screen | PrivacyPolicyScreen |
-|-------|--------|--------|---------|---------|---------|---------|---------|---------|----------|----------|---------|
-| ![SideBar](screenshorts/SideBar.jpg) | ![Account_Settings](screenshorts/Account_Settings.jpg) | ![Notification_Settings](screenshorts/Notification_Settings.jpg) | ![Notifications](screenshorts/Notifications.jpg) | ![Preferences_1](screenshorts/Preferences_1.jpg) | ![Preferences_2](screenshorts/Preferences_2.jpg) | ![Privacy_Settings_1](screenshorts/Privacy_Settings_1.jpg) | ![Privacy_Settings_2](screenshorts/Privacy_Settings_2.jpg) | ![Security_Settings_1](screenshorts/Security_Settings_1.jpg) | ![Security_Settings_2](screenshorts/Security_Settings_2.jpg.jpeg) | ![Faq_Screen](screenshorts/Faq_Screen.jpg) | ![PrivacyPolicyScreen](screenshorts/PrivacyPolicyScreen.jpg) |
+## Home Section
 
+<table>
+<tr>
+<td><img src="screenshorts/Home.jpg" width="200"/></td>
+<td><img src="screenshorts/Add_To_Story.jpg" width="200"/></td>
+<td><img src="screenshorts/Search_1.jpg" width="200"/></td>
+</tr>
+</table>
+
+---
+
+## Rating Section
+
+<table>
+<tr>
+<td><img src="screenshorts/Rating_Home_1.jpg" width="200"/></td>
+<td><img src="screenshorts/Rating_Home_2.jpg" width="200"/></td>
+</tr>
+</table>
+
+---
+
+## Create Post
+
+<table>
+<tr>
+<td><img src="screenshorts/Create_Post.jpg" width="200"/></td>
+<td><img src="screenshorts/Create_Post_1.jpg" width="200"/></td>
+</tr>
+</table>
+
+---
+
+## Chat Section
+
+<table>
+<tr>
+<td><img src="screenshorts/Chat_1.jpg" width="200"/></td>
+<td><img src="screenshorts/Chat_2.jpg" width="200"/></td>
+<td><img src="screenshorts/Chat_Inner.jpg" width="200"/></td>
+<td><img src="screenshorts/Chat_Inner_1.jpg" width="200"/></td>
+</tr>
+</table>
+
+---
+
+## Profile
+
+<p align="center">
+  <img src="screenshorts/Someone_else.jpg" width="200"/>
+</p>
+
+---
+
+## Settings Section
+
+<table>
+<tr>
+<td><img src="screenshorts/SideBar.jpg" width="150"/></td>
+<td><img src="screenshorts/Account_Settings.jpg" width="150"/></td>
+<td><img src="screenshorts/Notification_Settings.jpg" width="150"/></td>
+<td><img src="screenshorts/Notifications.jpg" width="150"/></td>
+<td><img src="screenshorts/Preferences_1.jpg" width="150"/></td>
+<td><img src="screenshorts/Preferences_2.jpg" width="150"/></td>
+</tr>
+
+<tr>
+<td><img src="screenshorts/Privacy_Settings_1.jpg" width="150"/></td>
+<td><img src="screenshorts/Privacy_Settings_2.jpg" width="150"/></td>
+<td><img src="screenshorts/Security_Settings_1.jpg" width="150"/></td>
+<td><img src="screenshorts/Security_Settings_2.jpg" width="150"/></td>
+<td><img src="screenshorts/Faq_Screen.jpg" width="150"/></td>
+<td><img src="screenshorts/PrivacyPolicyScreen.jpg" width="150"/></td>
+</tr>
+</table>
