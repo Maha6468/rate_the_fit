@@ -24,7 +24,7 @@ class Rating_Home_1 extends StatelessWidget {
           ),
         ),
         title: Text(
-          "Welcome 👋",
+          "Welcome👋",
           style: TextStyle(
             color: Colors.white,
             fontSize: 18,
